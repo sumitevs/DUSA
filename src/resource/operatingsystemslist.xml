@@ -1,0 +1,893 @@
+<OperatingSystems>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x86" osCode="PPM1" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Mobile 5.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x64" osCode="01001110011000011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 10 64-Bit - Home]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WSSP2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Standard Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100001011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 BSTAFO (Bing SmTblt AFO)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011000011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 SL (Single Language)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="1001100100000110" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 CS-SL]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100001100" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 BTAFO (Bing Tblt AFO)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="LHS86" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x86 - Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="TEST" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP - TEST]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100000011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 SL (Single Language)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x86" osCode="W7HP3" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 32-bit - Home Premium]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNET4" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Datacenter Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011000111" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 P4ED]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011000001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="WSWE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x86 - Web Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W8R2D" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Datacenter]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011001010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 BTAFO (Bing Tblt AFO)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="WNT45" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows NT 4.0 - SP5]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x86" osCode="01001100000000100" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 32-bit - Win8 32-bit EM]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="X6401" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - Unified Data Storage Server]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100110000000" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Dell - Windows Storage Server 2012 - Standard]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="SBS08" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Small Business Server 2011 Standard]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="WSSS1" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Storage Server SP1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100101000010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012 R2 - Datacenter]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WVHP" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 64-bit - Home Premium]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W2R21" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Web SP1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x86" osCode="01001110010000001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 10 32-Bit - PRO]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="MHV" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Microsoft Hyper-V]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011000101" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 CS]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="WSEE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x86 - Enterprise Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x86" osCode="01001100000000011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 32-bit - Win8 32-bit ARM]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="WLPP" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 32-bit - Business]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WNT13" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - Standard Edition (Duplicate)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="LHD86" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x86 - Datacenter Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100001000011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 64-bit - Win8 64-bit EM]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W8R2E" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Enterprise]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WNT21" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - Datacenter Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W8R2W" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Web]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x64" osCode="WNT54" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 2000 - Advanced Server 64-bit]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="W8-64" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 64-bit - Win8 64-Bit Pro]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="WR2S1" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Standard SP1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="1" minorVersion="0" osArch="x86" osCode="WCE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows CE]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011001001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 BSTAFO (Bing SmTblt AFO)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="WVPB" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 95 - Pro-SBE]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="W950" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 95]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="LHW86" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x86 - Web Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WNT14" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - Enterprise Edition (Duplicate)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="W952" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 95 - OSR 2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WVHB" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 64-bit - Home Basic]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNT10" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - R2 Enterprise Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100000101" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - WinPE 5.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="01001011011000101" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 64-bit - WinPE 2.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="WWP1" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Powered]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100101000100" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012 R2 - Essentials]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100000010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 Pro]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="WW1P" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP - Professional]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="WLHS" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 32-bit - Home Basic]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNET7" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Academic Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011000100" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - WinPE 5.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WLHS2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Enterprise Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WSSBS" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Small Business Server Standard Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="MWS7" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Embedded Standard 7]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="MW9" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Embedded Standard 2009]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WSAu" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server Aurora - Aurora]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W8R2F" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Foundation]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="WW1T" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP - Tablet PC Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x86" osCode="WNT50" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 2000 - Professional]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x86" osCode="W7P32" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 32-bit - Professional]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WWE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Web Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="XPE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP - Embedded (DO NOT USE)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="1001100100000110" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 CS-SL]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WW1P6" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP - Professional 64-bit (IA64)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="8R2EE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - OBSOLETE -- USE Windows Server 2008 R2 Enterprise]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="W864P" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 64-bit - Win8 64-bit H]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x86" osCode="WNT53" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 2000 - Small Business Server]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100000100" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 RT (ARM)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="SBSES" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Small Business Server 2011 Essentials]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="W9521" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 95 - OSR 2.1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001101111000001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Storage Server 2012 R2 - Workgroup]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100101000011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012 R2 - Foundation]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="WNT43" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows NT 4.0 - SP3]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="WS8R1" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Foundation SP1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100010000101" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012 - Essentials]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100001010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 BT (Bing Tblt)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="POSR9" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Embedded POSReady 2009]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100010000000" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W08R2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Datacenter SP1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x86" osCode="W7H32" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 32-bit - Home Basic]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="1" osArch="x86" osCode="W980" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 98]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WHMSR" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Home Server - Gold]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WVPP" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 64-bit - Business]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100000001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100010000011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012 - Datacenter]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNET8" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Academic Enterprise Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="9" osArch="x86" osCode="W1000" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Me]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WNET3" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - 64-bit Enterprise Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x86" osCode="01001110010000011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 10 32-Bit - Home]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x16" osCode="WLP" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 3.x - Pro-SBE]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WS8SS" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Storage Server]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100101000001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012 R2 - Standard]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="LHSBP" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Small Business Server Premium Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="WXHU3" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP - HOME ULCPC]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="1" minorVersion="0" osArch="x86" osCode="DOS62" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - MS-DOS - 6.2x]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x86" osCode="WNT51" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 2000 - Server]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="8R2FE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - OBSOLETE -- USE Windows Server 2008 R2 Foundation]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100010000010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012 - Standard]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="HyprV" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Microsoft Hyper-V Server 2008]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="8R2DC" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - OBSOLETE -- USE Windows Server 2008 R2 Datacenter]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNET5" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Web Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="LH64S" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x86" osCode="01001110010000010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 10 32-Bit - WinPE 10.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNET9" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - R2 Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WNT11" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - R2 Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x64" osCode="01001110011000001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 10 64-Bit - PRO]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="WNT46" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows NT 4.0 - SP6]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WNT12" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - R2 Enterprise Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="1" osArch="x86" osCode="PPC2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Pocket PC 2003]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="01001100100001001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 BST (Bing SmTblt)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="01001011010000110" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 32-bit - WinPE 2.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x86" osCode="W7U32" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 32-bit - Ultimate]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="1" minorVersion="0" osArch="x64" osCode="HYPV" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows - Microsoft Hyper-V]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W8R2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Standard]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="01001001001000110" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 64-bit - WinPE 3.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="WW1C" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP - Home Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011001011" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 BST (Bing SmTblt)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="W0SP2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Enterprise Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="VS" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 32-bit - Starter]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNT20" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Compute Cluster Server]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNET6" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Small Business Server Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W7H64" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 64-bit - Home Basic]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W8R2C" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - HPC Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="WIN7x" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 64-bit - Ultimate]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x86" osCode="01001001000000110" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 32-bit - Embedded POS Ready]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011001000" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 BT (Bing Tblt)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="WSSE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x86 - Standard Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100001000100" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 64-bit - WinPE 4.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNT16" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Small Business Server R2 Premium Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001100011000010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 Pro]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WXP64" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP x64 - Professional Client]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="WLHSE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x86 - Enterprise Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x86" osCode="WIN7" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 32-bit - Starter]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x16" osCode="W31W" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 3.x - for Workgroups]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01001101111000010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Storage Server 2012 R2 - Standard]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x86" osCode="W832H" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 32-bit - Win8 32-bit H]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x86" osCode="WNT52" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 2000 - Advanced Server]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNET2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Enterprise Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W7Pr6" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 64-bit - Professional]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="5" osArch="x86" osCode="WNT35" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows NT 3.5x - (any version)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="WSR21" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Enterprise SP1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="WLU" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 32-bit - Ultimate]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="SBSR2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Small Business Server 2011 Premium Add-on]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="PPC1" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Pocket PC 2002]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WS8F" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Foundation]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WVU" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 64-bit - Ultimate]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="WSSR2" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 R2 - Storage Server]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="W7HP6" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 64-bit - Home Premium]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="XPEM1" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP Embedded]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="LHW64" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Web Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WNT19" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - Windows Storage Server]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="01001001001000101" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 64-bit - Embedded POS Ready]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100010000100" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2012 - Foundation]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WPSBS" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Small Business Server Premium Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="8R2SE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - OBSOLETE -- USE Windows Server 2008 R2 Standard]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="MSX64" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="WLHP" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Vista 32-bit - Home Premium]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNT17" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Small Business Server Premium Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="01001100110000001" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Dell - Windows Storage Server 2012 - Workgroup]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x16" osCode="W310" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 3.x]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="1001100011000110" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 64-bit - 8.1 CS-SL]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="EBSSE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Essential Business Server Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="WNT44" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows NT 4.0 - SP4]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x86" osCode="01001100000000101" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 32-bit - WinPE 4.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="LHD64" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Datacenter Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WS8CE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - HPC Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="WSDC" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Datacenter Edition SP2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x86" osCode="1001100100001000" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8.1 32-bit - 8.1 P4ED]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="1" osArch="x86" osCode="W98SE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 98 - Second Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x86" osCode="01001001000000111" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 7 32-bit - WinPE 3.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x86" osCode="W8-32" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 8 32-bit - Win8 32-bit Pro]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNT15" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Small Business Server R2 Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="WX64E" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 x64 - Enterprise Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="WNT40" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows NT 4.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNT18" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Windows Storage Server 32bit]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x86" osCode="WW1M" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows XP - Media Center Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="EBSPE" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Essential Business Server Premium Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x64" osCode="01001110011000010" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows 10 64-Bit - WinPE 10.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="WNET1" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2003 - Standard Edition]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="LHSBS" osVendor="Microsoft" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Microsoft - Windows Server 2008 x64 - Small Business Server Standard Edition]]></Display>
+ 	</OperatingSystem>
+
+
+	<!-- Linux based operating systems -->
+
+
+	<OperatingSystem majorVersion="7" minorVersion="0" osArch="x64" osCode="01101011011000011" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 7 - Update 0 x86_x64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x86" osCode="NW6" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - Netware - 6.x]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="11" minorVersion="0" osArch="x64" osCode="SES11" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 11 - SP1 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x86" osCode="RH532" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x64" osCode="RH5DT" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Desktop x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="11" minorVersion="0" osArch="x64" osCode="1010000100000100" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 11 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="0" osArch="x86" osCode="LN70B" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 7.0 (IA-64)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="3" osArch="x86" osCode="1101011001000100" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Virtualization 3 - Update 3]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x86" osCode="LN61A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 6.1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x64" osCode="RH564" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="1" osArch="x64" osCode="01010000010000101" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 10 - SP1 x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="11" minorVersion="0" osArch="x64" osCode="01010000100000100" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 11 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x64" osCode="RL52" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5.2 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="6" osArch="x86" osCode="RH46" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4.6 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x86" osCode="NW3" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - Netware - 3.x]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="5" osArch="x64" osCode="R456" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4.5 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="0" osArch="x86" osCode="NW5" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - Netware - 5.x]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="11" minorVersion="0" osArch="x64" osCode="SES12" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 11 - SP2 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="2" osArch="x86" osCode="LN72B" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 7.2 (IA-64)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x64" osCode="01101011001000001" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Virtualization 3 - Update 0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x86" osCode="SLETC" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux Desktop 10 - Thin Client]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="2" osArch="x64" osCode="S10u2" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux Desktop 10 - SP 2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="6" osArch="x86" osCode="RH56E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 6 X86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="RH6E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - Update 1 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="8" osArch="x86" osCode="RH58E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 8 x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x64" osCode="RH4C" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4 - IPF]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="3" osArch="x86" osCode="RH53E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 3 X86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="11" minorVersion="4" osArch="x64" osCode="01010000100000110" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SUSE Linux ES 11 - SP4 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="NW4" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - Netware - 4.x]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="2" minorVersion="0" osArch="x86" osCode="NW2" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - Netware - 2.x]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="2" osArch="x86" osCode="RE52" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5.2 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="7" osArch="x86" osCode="RE47" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4.7 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x86" osCode="LE30A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 3 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x64" osCode="1101011100000000" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Virtualization 4 - ALL]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="8" osArch="x64" osCode="RH58A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 8 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="2" minorVersion="1" osArch="x86" osCode="LE21A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Enterprise Linux 2.1 - AS x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="0" osArch="x64" osCode="1101011101000000" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Workstation 7.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="RH4A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="01101010000000110" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - x64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x64" osCode="RH62E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - Update 2 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="7" osArch="x64" osCode="RH57A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 7 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="2" osArch="x64" osCode="01101011011000100" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 7 - Update 2 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x64" osCode="SL10A" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 10 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="9" minorVersion="0" osArch="x64" osCode="SL9A" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 9 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="1" osArch="x86" osCode="LN71A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 7.1 (IA-32)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="4" osArch="x64" osCode="01101010000001001" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - Update 4 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="5" osArch="x86" osCode="RH55E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 5 X86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="5" osArch="x86" osCode="RH45" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4.5 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="9" minorVersion="4" osArch="x64" osCode="LSP4" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 9 - SP4 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="1" osArch="x86" osCode="LN71C" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 7.1 (IA-32 / Oracle)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="2" osArch="x86" osCode="LN72A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 7.2 (IA-32)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="9" osArch="x64" osCode="01101001101010011" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 9 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="2" osArch="x86" osCode="LN62A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 6.2]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="RE49" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4 - Update 9 x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="RHX6" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - Desktop x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x64" osCode="LE30D" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 3 - EM64T]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="4" osArch="x16" osCode="SU104" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 10 - SP4 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="3" osArch="x64" osCode="RH53A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 3 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x64" osCode="RE48A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4 - Update 8 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x64" osCode="RH4B" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x64" osCode="SLD10" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux Desktop 10 - x64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="1" osArch="x64" osCode="RH51" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5.1 - Desktop x64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="7" osArch="x64" osCode="01101010000001011" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - Update 7 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="0" osArch="x64" osCode="RH6A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x64" osCode="01010000001000100" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux Desktop 10 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="1" osArch="x64" osCode="01101011011000001" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 7 - Update 1 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="2" minorVersion="1" osArch="x86" osCode="LE21D" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Enterprise Linux - WS 2.1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="6" osArch="x64" osCode="RH56A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 6 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="3" osArch="x86" osCode="1101011001000100" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Virtualization 3 - Update 3]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="0" osArch="x86" osCode="LN70A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 7.0 (IA-32)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="4" osArch="x64" osCode="1101011010000000" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Linux 6.4 - ALL]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="1" osArch="x64" osCode="01101011001000010" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Virtualization 3 - Update 1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="5" osArch="x64" osCode="RH55C" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 5 Desktop X8664]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="2" minorVersion="1" osArch="x86" osCode="LE21C" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Enterprise Linux - ES 2.1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="2" minorVersion="1" osArch="x86" osCode="RH264" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Enterprise Linux 2.1 - IPF]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="2" osArch="x64" osCode="SU10" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 10 - SP2 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="R6SP1" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - SP2 Client]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="6" osArch="x64" osCode="R466" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4.6 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="7" osArch="x64" osCode="RL47" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4.7 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x86" osCode="RE48" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4 - Update 8 x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="2" minorVersion="1" osArch="x86" osCode="LE21B" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Enterprise Linux 2.1 - ES x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="9" osArch="x64" osCode="01101001101010010" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 9 x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="9" minorVersion="0" osArch="x86" osCode="LN90A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 9.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="4" minorVersion="0" osArch="x64" osCode="RE49A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 4 - Update 9 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="12" minorVersion="0" osArch="x64" osCode="01010000111000001" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SUSE Linux ES 12 - Update 0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="" minorVersion="" osArch="x64" osCode="01010000111000010" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SUSE Linux ES 12 - Update 1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="6" osArch="x64" osCode="01101010000001100" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - Update 6 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="0" osArch="x64" osCode="01010000010000110" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 10 - x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="7" osArch="x86" osCode="RH57E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 7 x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="8" minorVersion="0" osArch="x86" osCode="LN80A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 8.0]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x86" osCode="R3U6X" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 3 - Update 6 x86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="1" osArch="x86" osCode="LN71B" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 7.1 (IA-64)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="11" minorVersion="0" osArch="x64" osCode="SES1" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 11 - x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="3" osArch="x64" osCode="01101010000001000" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - Update 3 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="4" osArch="x86" osCode="RH54E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 4 X86]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="3" osArch="x86" osCode="LN73A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Linux - 7.3 (IA-32)]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="5" osArch="x64" osCode="RH55A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 5 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="5" osArch="x64" osCode="01101010000001010" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - Update 5 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="6" minorVersion="1" osArch="x64" osCode="01101010000000111" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 6 - SP1 Client]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x64" osCode="R3U6E" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 3 - Update 6 EM64T]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="4" osArch="x64" osCode="RH54A" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 4 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="10" minorVersion="3" osArch="x16" osCode="SU103" osVendor="Novell" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Novell - SuSE Linux ES 10 - SP3 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="0" osArch="x64" osCode="RH364" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 3 - IPF]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="7" minorVersion="3" osArch="x64" osCode="01101011011000101" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 7 - Update 3 x86_64]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="3" minorVersion="1" osArch="x64" osCode="1101011001000010" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Virtualization 3 - Update 1]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="5" minorVersion="3" osArch="x64" osCode="RH53" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Red Hat Enterprise Linux 5 - Update 3 Client]]></Display>
+ 	</OperatingSystem>
+	<OperatingSystem majorVersion="2" minorVersion="1" osArch="x86" osCode="LE2U3" osVendor="Red Hat" spMajorVersion="0" spMinorVersion="0">
+	<Display lang="en"><![CDATA[Red Hat - Enterprise Linux 2.1 - Update 3 x86]]></Display>
+ 	</OperatingSystem>
+
+</OperatingSystems>

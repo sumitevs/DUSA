@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   -  XML schema defining reusable definitions for change management solutions.   These common types form the basis of the online, integrated change management solutions. 
+   -  
+   -  This specification is provided to you under the terms of the non-disclosure agreement (NDA) in place between your company and Dell. Under the terms of the NDA, you must not redistribute the information
+   -  that appears in this document  to any party not involved in facilitating or participating in the development of product software. That is, this document should only be available to those parties who have a need to know. 
+   -
+   -  Last Updated:  2014/03/26
+   -  Version 1.4 Updated the return codes, added componentID attribute and display name to registry inventory.
+   -  Version 1.3 Added arm to the list of os architectures enumeration types.
+   -  Version 1.2 Added upgradecode element to the T_MSI complex type.  Changed switch attribute to allow zero length value.  Changed SWID.IdentityInfoType and IdentityInfoValue to be arrays.
+   -  Version 1.1  Updated to remove explicit namespace declaration. Use include to incorporate into an externally accessible schema.
+   -
+  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.4">
+	<xs:complexType name="T_PCIInfo">
+		<xs:annotation>
+			<xs:documentation>Defines the type for reporting information about PCI devices</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="AG_PCIID"/>
+	</xs:complexType>
+	<xs:simpleType name="T_MSIID">
+		<xs:annotation>
+			<xs:documentation>Defines the type for reporting MSI Product/Update code or identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_PNPID">
+		<xs:annotation>
+			<xs:documentation>Defines the type for reporting vendor id of PnPID as PNPID</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z][A-Z][A-Z]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ACPIID">
+		<xs:annotation>
+			<xs:documentation>Defines the type for reporting vendor id of PnPID as ACPIID</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_PnPProductID">
+		<xs:annotation>
+			<xs:documentation>Defines the type for reporting product id component of as PnPID</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="T_PnPInfo">
+		<xs:annotation>
+			<xs:documentation>Defines the type for reporting PnPID</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="PNPID" type="T_PNPID"/>
+				<xs:element name="ACPIID" type="T_ACPIID"/>
+			</xs:choice>
+			<xs:element name="PnPProductID" type="T_PnPProductID"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_MSI">
+		<xs:annotation>
+			<xs:documentation>Defines the type for returning information about MSI packages.</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="identifyingnumber" type="T_MSIID" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Shall contain the MSI product code defined for the package.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="upgradecode" type="T_MSIID" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Shall contain the MSI upgrade code defined forthe package.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="version" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Shall contain the MSI product version.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0"/>
+			<xs:element name="vendor" type="xs:string" minOccurs="0"/>
+			<xs:element name="caption" type="xs:string" minOccurs="0"/>
+		</xs:all>
+		<xs:attribute name="componentID" type="xs:unsignedLong" use="required">
+		  <xs:annotation>
+			<xs:documentation>Representing the component id of the device.</xs:documentation>
+		  </xs:annotation>
+		</xs:attribute>
+  </xs:complexType>
+	<xs:complexType name="T_ListMSI">
+		<xs:sequence>
+			<xs:element name="msi" type="T_MSI" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Provides the required inventory metadata information about an MSI package.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_RegistryKey">
+		<xs:annotation>
+			<xs:documentation>Type for reporting registry key names and value.</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The fully qualified registry key name.   Root keys shall be fully specified.  For example, HKEY_LOCAL_MACHINE shall be specified and not HKLM.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The unnamed, default value of the registry key.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="displayName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>The fully qualified registry key name that provides the display name. Root keys shall be fully specified.  For example, HKEY_LOCAL_MACHINE shall be specified and not HKLM.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="displayValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Default value for display name.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+    <xs:attribute name="componentID" type="xs:unsignedLong" use="required">
+      <xs:annotation>
+        <xs:documentation>Representing the component id of the device.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+	<xs:complexType name="T_ListRegistryKey">
+		<xs:sequence>
+			<xs:element name="registrykey" type="T_RegistryKey" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Each registrykey element corresponds to a single registry key.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_BIOSInformation">
+		<xs:annotation>
+			<xs:documentation>Type for reporting BIOS version information</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="version" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="T_PnPDevice">
+		<xs:annotation>
+			<xs:documentation>Type for reporting information about a plug and play install(ed/able) device.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="driverversion" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Identifies the driver version reported for the device.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="pnpidstring" type="T_PnPInfo">
+					<xs:annotation>
+						<xs:documentation>True PnP ID for non-PCI devices</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="pciinfo" type="T_PCIInfo">
+					<xs:annotation>
+						<xs:documentation>For PCI devices, provides the PCI ID identifying information for the device.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="generic" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>For generic devices which are not PCI/PNP. The identifier is given as a string here.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+    <xs:attribute name="componentID" type="xs:unsignedLong" use="required">
+      <xs:annotation>
+        <xs:documentation>Representing the component id of the device.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="bus" type="xs:int" use="optional"/>
+		<xs:attribute name="device" type="xs:int" use="optional"/>
+		<xs:attribute name="function" type="xs:int" use="optional"/>
+		<xs:attribute name="display" type="xs:string"/>
+		<xs:attribute name="componentinstance" type="xs:int" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="T_ListPnPDevice">
+		<xs:sequence>
+			<xs:element name="pnpdevice" type="T_PnPDevice" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_SoftwareIdentity">
+		<xs:sequence>
+			<xs:element name="elementname" minOccurs="0"/>
+			<xs:element name="versionstring">
+				<xs:annotation>
+					<xs:documentation>The versionstring element contains the vendor defined version for the software package.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="identityinfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="value"/>
+						<xs:element name="type" minOccurs="0"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+    <xs:attribute name="componentID" type="xs:unsignedLong" use="required">
+      <xs:annotation>
+        <xs:documentation>Representing the component id of the device.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+	<xs:complexType name="T_ListSoftwareIdentity">
+		<xs:sequence>
+			<xs:element name="softwareidentity" type="T_SoftwareIdentity" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>each softwareidentity element corresponds to an iinstance of CIM_SoftwareIdentity.  Only the subset of values required by the MUP specification to identify the software package are provided.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:attributeGroup name="AG_PCIID">
+		<xs:annotation>
+			<xs:documentation>Attribute group for reporting a PCI ID.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="vendorID" type="xs:hexBinary" use="required"/>
+		<xs:attribute name="deviceID" type="xs:hexBinary" use="required"/>
+		<xs:attribute name="subDeviceID" type="xs:hexBinary" use="optional"/>
+		<xs:attribute name="subVendorID" type="xs:hexBinary" use="optional"/>
+	</xs:attributeGroup>
+	<xs:complexType name="T_SystemId">
+		<xs:annotation>
+			<xs:documentation>Type defining the representation of a systemId and its optional relationship to product name and code name.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:annotation>
+					<xs:documentation>The value shall be expressed as the hexadecimal system id.</xs:documentation>
+				</xs:annotation>
+				<xs:attribute name="codename" type="xs:string"/>
+				<xs:attribute name="brandname" type="xs:string"/>
+				<xs:attribute name="modelname" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Enum_ReleaseTypesProgrammatic">
+		<xs:annotation>
+			<xs:documentation>Enumerated list of known release types.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BIOS"/>
+			<xs:enumeration value="DRVR"/>
+			<xs:enumeration value="APP"/>
+			<xs:enumeration value="FRMW"/>
+			<xs:enumeration value="APAC"/>
+			<xs:enumeration value="UTIL"/>
+			<xs:enumeration value="BSD"/>
+      <xs:enumeration value="UEFICAPSULE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ServiceTag">
+		<xs:annotation>
+			<xs:documentation>Type for representing the platform service tag</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="T_AssetTag">
+		<xs:annotation>
+			<xs:documentation>Type for representing the platform's asset tag</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="T_OSIdentification">
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="architecture" type="Enum_OSArchitecture" use="optional"/>
+		<xs:attribute name="vendor" type="xs:string" use="optional"/>
+		<xs:attribute name="majorversion" type="xs:string" use="optional"/>
+		<xs:attribute name="minorversion" type="xs:string" use="optional"/>
+		<xs:attribute name="spmajorversion" type="xs:string" use="optional"/>
+		<xs:attribute name="spminorversion" type="xs:string" use="optional"/>
+		<xs:attribute name="locale" type="T_Locale"/>
+	</xs:complexType>
+	<xs:simpleType name="Enum_OSArchitecture">
+		<xs:annotation>
+			<xs:documentation>Enumerated list of os/platform architectures</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="x86"/>
+			<xs:enumeration value="x64"/>
+			<xs:enumeration value="ia64"/>
+			<xs:enumeration value="ia32"/>
+			<xs:enumeration value="arm"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Enum_OSNames">
+		<xs:annotation>
+			<xs:documentation>Enumerated list of os names.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vista"/>
+			<xs:enumeration value="XP"/>
+			<xs:enumeration value="Windows7"/>
+			<xs:enumeration value="Windows8"/>
+			<xs:enumeration value="Windows8.1"/>
+			<xs:enumeration value="W2K"/>
+			<xs:enumeration value="W2K3"/>
+			<xs:enumeration value="W2K8"/>
+			<xs:enumeration value="W2K8R2"/>
+			<xs:enumeration value="W2K12"/>
+			<xs:enumeration value="W2K12R2"/>
+			<xs:enumeration value="winpe"/>
+			<xs:enumeration value="winpe3x"/>
+			<xs:enumeration value="winpe4x"/>
+			<xs:enumeration value="winpe5x"/>
+			<xs:enumeration value="DOS-ODI"/>
+			<xs:enumeration value="DOS-NDIS2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Locale">
+		<xs:annotation>
+			<xs:documentation>ISO 639-2 compliant locale identifier.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<!-- Begin MUP/DUP mapping type defines -->
+	<xs:simpleType name="Enum_CommandLineParameterNames">
+		<xs:annotation>
+			<xs:documentation>Enumerated list of known command line parameters.  this is named functionality to which a command line parameter corresponds.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="force"/>
+			<xs:enumeration value="logfile"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Enum_ReturnCodeNames">
+		<xs:annotation>
+			<xs:documentation>Enumerated list of return codes.  This is the named error condition to which an actual value corresponds.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SUCCESS">
+				<xs:annotation>
+					<xs:documentation>SUCCESS shall be returned if the update was successfully applied and a reboot is not required.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ERROR">
+				<xs:annotation>
+					<xs:documentation>ERROR shall be returned if an error occurs during the update process, the update was not applied, and a more specific exit code is not available.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="REBOOT_REQUIRED">
+				<xs:annotation>
+					<xs:documentation>REBOOT_REQUIRED shall be returned if the MUP executed successfully but a reboot is required to apply the update or have it take effect.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DEP_SOFT_ERROR">
+				<xs:annotation>
+					<xs:documentation>A soft dependency error is an error that may be overridden using the FORCE behavior.
+									  DEP_SOFT_ERROR  shall be returned if any of the following situations occur:
+										•	Attempted to update to the same version of the software or downgrade to a previous version of the software without specifying the FORCE=true Behavior.
+									  NOTE:  There may be additional soft dependencies that result in a value of  DEP_SOFT_ERROR  being returned.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DEP_HARD_ERROR">
+				<xs:annotation>
+					<xs:documentation>Hard dependency error. 
+									DEP_HARD_ERROR shall be returned if prerequisite versions of software are not found on the system. 
+									A MUP enforces this check and blocks an update from being applied if the prerequisite is not met, preventing the platform from reaching an invalid configuration state. 
+									A MUP satisfying the prerequisite may exist. 
+									A Hard Dependency Error cannot be suppressed by using the FORCE=true switch.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ERROR_INSTALL_PLATFORM_UNSUPPORTED">
+				<xs:annotation>
+					<xs:documentation>Hard qualification error. 
+									PLATFORM_UNSUPPORTED shall be returned if the Update Package is not applicable for the target system.  PLATFORM_UNSUPPORTED shall be returned if any of the following situations occur:
+									 The operating system is not supported by the Update Package
+									 The system is not supported by the Update Package
+									 The Update Package is not compatible with the devices found in the system. 
+									NOTE:  There may be additional qualification errors that result in PLATFORM_UNSUPPORTED being returned.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="REBOOTING_SYSTEM">
+				<xs:annotation>
+					<xs:documentation>A value of REBOOTING_SYSTEM shall be returned if the MUP initiates a reboot of the system. This value shall not be returned in cases where silent/unattended installation requests. In case of silent installs the MUP shall fall back to returning “REBOOT_REQUIRED” and not initiate a reboot.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PASSWORD_REQUIRED">
+				<xs:annotation>
+					<xs:documentation>If an update requires user input password and an execution instance fails due to an invalid or missing password, PASSWORD_REQUIRED shall be return.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NO_DOWNGRADE">
+				<xs:annotation>
+					<xs:documentation>NO_DOWNGRADE shall be returned if the version of the software being installed is lower than or the same as the version already installed on the system and the FORCE modifier is not supported by the package.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="REBOOT_UPDATE_PENDING">
+				<xs:annotation>
+					<xs:documentation>REBOOT_UPDATE_PENDING shall be returned if a reboot is required and the MUP will resume after the reboot completes.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="UNKNOWN_OPTION">
+				<xs:annotation>
+					<xs:documentation>UNKNOWN_OPTION shall be returned if the MUP is invoked with a command line option that is either unrecognized or unsupported by the MUP.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Enum_InstallerTypes">
+		<xs:annotation>
+			<xs:documentation>Enumerated list of known installer types</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="msi"/>
+			<xs:enumeration value="custom"/>
+			<xs:enumeration value="installshield installscript"/>
+			<xs:enumeration value="installshield installscript msi"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Enum_PackageTypes">
+		<xs:annotation>
+			<xs:documentation>Enumerated list of package options identified in the MUP specification.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="single_package"/>
+			<xs:enumeration value="pair_driver_and_application"/>
+			<xs:enumeration value="pair_driver_reduced"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Enum_Behaviors">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="unattended"/>
+			<xs:enumeration value="attended"/>
+			<xs:enumeration value="extractdrivers"/>
+			<xs:enumeration value="freshinstall"/>
+			<xs:enumeration value="help"/>
+			<xs:enumeration value="driveronly"/>
+			<xs:enumeration value="applicationonly"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="AG_OptionFormAttributes">
+		<xs:attribute name="switch" use="required">
+			<xs:annotation>
+				<xs:documentation>switch identifies the command line switch that will be used to delimit the start of this vendor option.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="preserve"/>
+					<xs:minLength value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="requiresvalue" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>requiresvalue has a value of true if the vendor option requires a value to be specified for it.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="valuedelimiter">
+			<xs:annotation>
+				<xs:documentation>valuedelimiter identifies the character that delimits the end of the option identifier and the start of the option value.  This attribute shall be implemented if requiresvalue is true.  An empty string indicates no delimiter.  A single whitespace character indicates one or more whitespaces delimit the option.  Any other string indicates precisely that pattern is utilized.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="preserve"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="enclose" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>enclose identifies the character used to enclose the value provided to the option.  If this attribute is absent, no enclosing characters are utilized.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:complexType name="T_OptionValueConstraint">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="AG_OptionFormAttributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="Enum_DUPReturnCodeValues">
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>SUCCESSFUL</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>UNSUCCESSFUL (FAILURE)</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>REBOOT_REQUIRED</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>DEP_SOFT_ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>DEP_HARD_ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="5">
+				<xs:annotation>
+					<xs:documentation>QUAL_HARD_ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="6">
+				<xs:annotation>
+					<xs:documentation>REBOOTING_SYSTEM</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="7">
+				<xs:annotation>
+					<xs:documentation>INVALID_CMDLINE</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="8">
+				<xs:annotation>
+					<xs:documentation>UNKNOWN_OPTION</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="9">
+				<xs:annotation>
+					<xs:documentation>INSTALL_UNSUPPORTED</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="10">
+				<xs:annotation>
+					<xs:documentation>ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="11">
+				<xs:annotation>
+					<xs:documentation>AUTH_LEVEL</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="12">
+				<xs:annotation>
+					<xs:documentation>VENDOR_INSTALLER_ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="13">
+				<xs:annotation>
+					<xs:documentation>UPDATE_SUCCESSFUL_COREQUISITE_NOT_MET</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="14">
+				<xs:annotation>
+					<xs:documentation>REBOOT_REQUIRED_COREQUISITE_NOT_MET</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="15">
+				<xs:annotation>
+					<xs:documentation>CONTAINER_POWER_CYCLE_REQUIRED</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1608">
+				<xs:annotation>
+					<xs:documentation>UNKNOWN_ERROR</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- end MUP/DUP mapping type defines -->
+	<xs:simpleType name="Enum_PackagingTypes">
+		<xs:annotation>
+			<xs:documentation>Enumeration of the types of packaging that can be used to deliver a MUP</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="executable"/>
+			<xs:enumeration value="zip"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

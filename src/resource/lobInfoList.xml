@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<LinesOfBusiness>
+	<LineOfBusiness Name="Optiplex" Code="1" Prefix="OP" />
+	<LineOfBusiness Name="Enterprise Servers" Code="3" Prefix="PE" />
+	<LineOfBusiness Name="Latitude" Code="4" Prefix="LAT" />
+	<LineOfBusiness Name="Precision" Code="11" Prefix="PRE" />
+	<LineOfBusiness Name="PowerVault" Code="13" Prefix="PV" />
+	<LineOfBusiness Name="Optiplex" Code="15" Prefix="OP" />
+	<LineOfBusiness Name="PowerVault" Code="31" Prefix="PV" />
+	<LineOfBusiness Name="Cloud Products" Code="44" Prefix="PEC" />
+	<LineOfBusiness Name="Latitude" Code="46" Prefix="LAT" />
+	<LineOfBusiness Name="Optiplex" Code="47" Prefix="OP" />
+	<LineOfBusiness Name="Equallogic" Code="51" Prefix="EQ" />
+	<LineOfBusiness Name="Cloud Products" Code="69" Prefix="PEC" />
+	<LineOfBusiness Name="Optiplex" Code="77" Prefix="OP" />
+	<LineOfBusiness Name="Precision" Code="78" Prefix="PRE" />
+	<LineOfBusiness Name="Latitude" Code="79" Prefix="LAT" />
+	<LineOfBusiness Name="Precision" Code="80" Prefix="PRE" />
+	<LineOfBusiness Name="Internet of Things" Code="84" Prefix="IOT" />
+</LinesOfBusiness>

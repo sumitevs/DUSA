@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <osidentifier name="Windows Vista - x86" enumVal="Vista" architecture="x86" vendor="vendor1" majorversion="majorversion1" minorversion="minorversion1" spmajorversion="spmajorversion1" spminorversion="spminorversion1" locale="locale1" />
+    <osidentifier name="Windows Vista - x64" enumVal="Vista" architecture="x64" vendor="vendor2" majorversion="majorversion2" minorversion="minorversion2" spmajorversion="spmajorversion2" spminorversion="spminorversion2" locale="locale2" />
+    <osidentifier name="Windows XP - x86" enumVal="XP" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows XP - x64" enumVal="XP" architecture="x86" vendor="vendor1" majorversion="majorversion1" minorversion="minorversion1" spmajorversion="spmajorversion1" spminorversion="spminorversion1" locale="locale1" />
+    <osidentifier name="Windows7 - x86" enumVal="Windows7" architecture="x64" vendor="vendor2" majorversion="majorversion2" minorversion="minorversion2" spmajorversion="spmajorversion2" spminorversion="spminorversion2" locale="locale2" />
+    <osidentifier name="Windows7 - x64" enumVal="Windows7" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows8 - x86" enumVal="Windows8" architecture="x86" vendor="vendor1" majorversion="majorversion1" minorversion="minorversion1" spmajorversion="spmajorversion1" spminorversion="spminorversion1" locale="locale1" />
+    <osidentifier name="Windows8 - x64" enumVal="Windows8" architecture="x64" vendor="vendor2" majorversion="majorversion2" minorversion="minorversion2" spmajorversion="spmajorversion2" spminorversion="spminorversion2" locale="locale2" />
+    <osidentifier name="Windows8.1 - x86" enumVal="Windows8.1" architecture="x86" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows8.1 - x64" enumVal="Windows8.1" architecture="x64" vendor="vendor1" majorversion="majorversion1" minorversion="minorversion1" spmajorversion="spmajorversion1" spminorversion="spminorversion1" locale="locale1" />
+    <osidentifier name="Windows9 - x86" enumVal="W2K" architecture="x64" vendor="vendor2" majorversion="majorversion2" minorversion="minorversion2" spmajorversion="spmajorversion2" spminorversion="spminorversion2" locale="locale2" />
+    <osidentifier name="Windows9 - x64" enumVal="W2K" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows10 - x86" enumVal="W2K3" architecture="x86" vendor="vendor1" majorversion="majorversion1" minorversion="minorversion1" spmajorversion="spmajorversion1" spminorversion="spminorversion1" locale="locale1" />
+    <osidentifier name="Windows10 - x64" enumVal="W2K3" architecture="x64" vendor="vendor2" majorversion="majorversion2" minorversion="minorversion2" spmajorversion="spmajorversion2" spminorversion="spminorversion2" locale="locale2" />
+    <osidentifier name="Windows2000 - x86" enumVal="W2K8" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows2000 - x64" enumVal="W2K8" architecture="x86" vendor="vendor1" majorversion="majorversion1" minorversion="minorversion1" spmajorversion="spmajorversion1" spminorversion="spminorversion1" locale="locale1" />
+    <osidentifier name="Windows Server 2003 - x86" enumVal="W2K8R2" architecture="x64" vendor="vendor2" majorversion="majorversion2" minorversion="minorversion2" spmajorversion="spmajorversion2" spminorversion="spminorversion2" locale="locale2" />
+    <osidentifier name="Windows Server 2003 - x64" enumVal="W2K8R2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows Server 2008 - x86" enumVal="W2K12" architecture="x86" vendor="vendor1" majorversion="majorversion1" minorversion="minorversion1" spmajorversion="spmajorversion1" spminorversion="spminorversion1" locale="locale1" />
+    <osidentifier name="Windows Server 2008 - x64" enumVal="W2K12" architecture="x64" vendor="vendor2" majorversion="majorversion2" minorversion="minorversion2" spmajorversion="spmajorversion2" spminorversion="spminorversion2" locale="locale2" />
+    <osidentifier name="Windows Server 2008 R2 - x86" enumVal="W2K12R2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows Server 2008 R2 - x64" enumVal="W2K12R2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows Server 2012 - x86" enumVal="winpe" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows Server 2012 - x64" enumVal="winpe" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows Server 2012 R2 - x86" enumVal="winpe3x" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows Server 2012 R2 - x64" enumVal="winpe3x" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows PE - x86" enumVal="winpe4x" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows PE - x64" enumVal="winpe4x" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows PE 3.0 - x86" enumVal="winpe5x" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows PE 3.0 - x64" enumVal="winpe5x" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows PE 4.0 - x86" enumVal="DOS-ODI" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows PE 4.0 - x64" enumVal="DOS-ODI" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows PE 5.0 - x86" enumVal="DOS-NDIS2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="Windows PE 5.0 - x64" enumVal="DOS-NDIS2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="MS DOS - x86" enumVal="DOS-NDIS2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="MS DOS - x64" enumVal="DOS-NDIS2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="DOS - x86" enumVal="DOS-NDIS2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    <osidentifier name="DOS - x64" enumVal="DOS-NDIS2" architecture="ia64" vendor="vendor3" majorversion="majorversion3" minorversion="minorversion3" spmajorversion="spmajorversion3" spminorversion="spminorversion3" locale="locale3" />
+    </root>

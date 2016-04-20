@@ -1,0 +1,1332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   -  XML schema defining reusable definitions for change management solutions.
+   -  Last Updated:  2016/02/18
+   -  Version 1.4 
+   -    * Added alternateRollbackIdentifier attribute to RollbackInformation element
+   -  Version 1.3 
+   -    * Added enum to disble the force update
+   -  Version 1.2 
+   -	* Added FeatureSet, Feature,  CommandLine elements to support the selective update feature
+   -    * Added UnsupportedOperatingSystems element to handle the update failures from unsupported operating systems.
+   -    * Added Brand and OperatingSystem in Depenency and SoftDependecy elements.
+   -    * Added PNPInfo element, componentID and fmpWrapperIdentifier attributes in capsule element to support multiple capsule files.
+   -    * Made path attribute from FMPDriver element as optional
+   -  Version 1.1 Made the following changes
+   -    * Added CapsulePayloadParts to describe UEFI 2.4 capsule payloads
+   -    * Made only Plugins and Info elements as mandatory child elements for PIEConfig
+   -    * Added documentation
+   -  Version 1.0 Existing Schema First Version
+   -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" elementFormDefault="qualified" version="1.4" xsi:noNamespaceSchemaLocation="http://downloads.dell.com/catalog/PIEConfig.xsd">
+	<xs:complexType name="DisplayType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing any display string with the language information</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>Defines the language of the display string.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="MessageType">
+		<xs:annotation>
+			<xs:documentation>Type for representing a message corresponding to a return code</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:annotation>
+					<xs:documentation>Message string</xs:documentation>
+				</xs:annotation>
+				<xs:attribute name="id" type="xs:short" use="required">
+					<xs:annotation>
+						<xs:documentation>return code to which this message is mapped.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="MessagesType">
+		<xs:annotation>
+			<xs:documentation>Type for describing list of Message elements</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Message" type="MessageType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="GUIDType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the Globally unique identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ComponentTypeEnum">
+		<xs:annotation>
+			<xs:documentation>Type for describing component type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="APP">
+				<xs:annotation>
+					<xs:documentation>Enumeration for describing application.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BIOS">
+				<xs:annotation>
+					<xs:documentation>Enumeration for describing BIOS.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DRVR">
+				<xs:annotation>
+					<xs:documentation>Enumeration for describing Driver.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FRMW">
+				<xs:annotation>
+					<xs:documentation>Enumeration for describing Firmware.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComponentTypesType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the list of Component Type elements</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ComponentType" type="ComponentTypeEnum" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="OSTypeEnum">
+		<xs:annotation>
+			<xs:documentation>Defines the enumeration for Operating system type.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKENS">
+			<xs:enumeration value="client">
+				<xs:annotation>
+					<xs:documentation>Enumeration for client variation of operating systems</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="server">
+				<xs:annotation>
+					<xs:documentation>Enumeration for server variation of operating systems</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="controller">
+				<xs:annotation>
+					<xs:documentation>Enumeration for controller variation of operating systems</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="switch">
+				<xs:annotation>
+					<xs:documentation>Enumeration for switch variation of operating systems</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OSArchitectureEnum">
+		<xs:annotation>
+			<xs:documentation>Defines the enumeration for Operating system architecture.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKENS">
+			<xs:enumeration value="x86">
+				<xs:annotation>
+					<xs:documentation>Enumeration for 32-bit x86 operating system</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="x64">
+				<xs:annotation>
+					<xs:documentation>Enumeration for 64-bit x86 operating system</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ia64">
+				<xs:annotation>
+					<xs:documentation>Enumeration for 64-bit Itanium operating system</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ia32">
+				<xs:annotation>
+					<xs:documentation>Enumeration for 32-bit Itanium operating system</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ComparisonOperatorEnum">
+		<xs:annotation>
+			<xs:documentation>Defines the enumeration for Comparison Operator.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKENS">
+			<xs:enumeration value="GreaterThan">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Greater than operator</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LessThan">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Less than operator</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EqualTo">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Equal to operator</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NotEqualTo">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Not Equal to operator</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GreaterThanEqualTo">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Greater than or equal to operator</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LessThanEqualTo">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Less than or equal to operator</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="LanguageType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the Language Identifier.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:NMTOKEN"/>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="SupportedLanguagesType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for a list of language elements supported.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Language" type="LanguageType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OperatingSystemType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the operting system information</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Display" type="DisplayType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Represents the user displayable text in a particular language.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SupportedLanguages" type="SupportedLanguagesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Represents the languages supported by this operating system.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="osCode" type="xs:NMTOKEN" use="required">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the operating system's code on Agile.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="osVendor" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the operating system vendor.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="osArch" type="OSArchitectureEnum" use="optional">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the operating system architecture.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="osType" type="OSTypeEnum" use="optional">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the operating system type.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="majorVersion" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the major version of the operting system.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="minorVersion" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the minor version of the operting system.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="spMajorVersion" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the service pack major version of the operting system.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="spMinorVersion" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the service pack minor version of the operting system.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="preinstallationEnvironment" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+          Attribute representing PE(Preinstallation environment) version of the operating system.
+          It should be set to true only for Preinstallation environments.
+          This attribute would be absent for the regular operating system elements
+        </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="suiteMask" type="xs:unsignedInt" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+          Attribute for specifying the specific flavor of the operating system.
+          It should be present only while specifying a particular flavor of the operating system.
+        </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="CliToFileType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the Command Line for invoking the executable with the output being redirected to a file.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Command" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Command line to be used for invoking the executable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Output" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>file name in which the output is written</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CliToStdoutType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the Command Line for invoking the executable with the output being written to stdout</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Command" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Command line to be used for invoking the executable</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CliforceToFileType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the Command Line for invoking the executable with force option and the output being redirected to a file.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Command" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Command line to be used for invoking the executable with force option</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Output" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>file name in which the output is written</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CliforceToStdoutType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the Command Line for invoking the executable with the force option and output being written to stdout</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Command" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Command line to be used for invoking the executable with force option</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PCIInfoType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing PCIID.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="deviceID" type="xs:hexBinary" use="required">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the device id portion of the PCIID</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="vendorID" type="xs:hexBinary" use="required">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the vendor id portion of the PCIID</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="subDeviceID" type="xs:hexBinary" use="required">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the sub device id portion of the PCIID</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="subVendorID" type="xs:hexBinary" use="required">
+			<xs:annotation>
+				<xs:documentation>Attribute representing the sub vendor id portion of the PCIID</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="PNPIDType">
+		<xs:annotation>
+			<xs:documentation> Defines the type for PNPID portion of Plug and Play ID. More information can be obtained at http://msdn.microsoft.com/en-us/library/windows/hardware/gg463195.aspx. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z][A-Z][A-Z]" id="PNPID.pattern"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ACPIIDType">
+		<xs:annotation>
+			<xs:documentation> Defines the type for ACPIID portion of Plug and Play ID. More information can be obtained at http://msdn.microsoft.com/en-us/library/windows/hardware/gg463195.aspx. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]" id="ACPIID.pattern"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PnPProductIDType">
+		<xs:annotation>
+			<xs:documentation> Defines the type for Product ID portion of Plug and Play ID. More information can be obtained at http://msdn.microsoft.com/en-us/library/windows/hardware/gg463195.aspx. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]" id="PnPProductID.pattern"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="PnPInfoType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for Plug and Play ID information. More information can be obtained at http://msdn.microsoft.com/en-us/library/windows/hardware/gg463195.aspx. </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:annotation>
+					<xs:documentation>This defines the vendor id portion of Plug and Play ID. It could be either PNPID or ACPIID</xs:documentation>
+				</xs:annotation>
+				<xs:element name="PNPID" type="PNPIDType"/>
+				<xs:element name="ACPIID" type="ACPIIDType"/>
+			</xs:choice>
+			<xs:element name="PnPProductID" type="PnPProductIDType">
+				<xs:annotation>
+					<xs:documentation>This defines the product id portion of Plug and Play ID. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ContextEnum">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the context of operation, mainly used while describing dependency.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OS">
+				<xs:annotation>
+					<xs:documentation>Enumeration representing the operating system.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LC">
+				<xs:annotation>
+					<xs:documentation>Enumeration representing the Lifecycle Controller.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="iDRAC">
+				<xs:annotation>
+					<xs:documentation>Enumeration representing the iDRAC (Dell Remote Access Controller).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Console">
+				<xs:annotation>
+					<xs:documentation>Enumeration representing a console.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="All">
+				<xs:annotation>
+					<xs:documentation>Enumeration for wild card representing any context.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FeatureEnum">
+		<xs:annotation>
+			<xs:documentation>Defines the type for feature related information.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SelectiveUpdate">
+				<xs:annotation>
+					<xs:documentation>Enumeration for the selective update feature.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DisableForceUpdate">
+				<xs:annotation>
+					<xs:documentation>Enumeration to disable the force update for component.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DependencyType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the dependency.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Display" type="DisplayType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Represents the user displayable text in a particular language.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PCIInfo" type="PCIInfoType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Representing the PCI ID information of the device on which the dependency is being described.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PnPInfo" type="PnPInfoType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Representing the Plug and Play ID information of the device on which the dependency is being described.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Brand" type="BrandType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Representing the systems on which the dependency is being described.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OperatingSystem" type="OperatingSystemType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Representing the operating systems on which the dependency is being described.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="componentType" type="xs:NMTOKEN" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the component type of the dependent component.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="componentID" type="xs:unsignedLong" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the component id of the device on which the dependency is being described.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the version of the dependent component.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="prerequisite" type="GUIDType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the identifier of the dependent component.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="path" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the path of the update package which would enable the dependency to be met.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="releaseID" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Representing the release identifier of the update package which would enable the dependency to be met.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="context" type="ContextEnum" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the context in which the dependency is applicable.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SoftDependencyType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the soft dependency.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Display" type="DisplayType">
+				<xs:annotation>
+					<xs:documentation>Represents the user displayable text in a particular language.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="detail" type="DisplayType">
+				<xs:annotation>
+					<xs:documentation>Represents the list of features that would be missed if the soft dependency is not met.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PCIInfo" type="PCIInfoType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Representing the PCI ID information of the device on which the dependency is being described.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PnPInfo" type="PnPInfoType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Representing the Plug and Play ID information of the device on which the dependency is being described.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Brand" type="BrandType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Representing the systems on which the dependency is being described</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OperatingSystem" type="OperatingSystemType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Representing the operating systems on which the dependency is being described.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="componentType" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the component type of the dependent component.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="componentID" type="xs:unsignedLong" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the component id of the device on which the dependency is being described.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the version of the dependent component.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="prerequisite" type="GUIDType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the identifier of the dependent component.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="path" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the path of the update package which would enable the dependency to be met.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="releaseID" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Representing the release identifier of the update package which would enable the dependency to be met.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="context" type="ContextEnum" use="optional">
+			<xs:annotation>
+				<xs:documentation>Representing the context in which the dependency is applicable.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="SystemIDTypeEnum">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the system id.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BIOS">
+				<xs:annotation>
+					<xs:documentation>Enumeration for BIOS ID</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MULTISYSTEMCHASSIS">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Modular Chassis</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="RAIDCHASSIS">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Raid Chassis</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ROUTER">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Router</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NETWORKSWITCH">
+				<xs:annotation>
+					<xs:documentation>Enumeration for Network Switch</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SystemContextEnum">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the system context, mainly while describing supported system.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Independent">
+				<xs:annotation>
+					<xs:documentation>Enumeration representing independent system.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Chassis">
+				<xs:annotation>
+					<xs:documentation>Enumeration representing system in a chassis context.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SubChassis">
+				<xs:annotation>
+					<xs:documentation>Enumeration representing system in a sub-chassis context.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Rack">
+				<xs:annotation>
+					<xs:documentation>Enumeration representing system in a rack context.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ModelType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the system.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Display" type="DisplayType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Represents the user displayable text for the system.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Brand" type="BrandType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Represents the brand information along with the supported systems in that brand. This shall be used only when systemContext attribute is set to Chassis.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="systemID" type="xs:hexBinary" use="required">
+			<xs:annotation>
+				<xs:documentation>Represents the BIOS ID for the system.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="systemIDType" type="SystemIDTypeEnum" use="optional">
+			<xs:annotation>
+				<xs:documentation>Represents the system id type for the system.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="systemContext" type="SystemContextEnum" use="optional">
+			<xs:annotation>
+				<xs:documentation>Represents the context in which the system is hosted.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BrandType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the brand along with the systems supported in it.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Display" type="DisplayType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Represents the user displayable text of the brand.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Model" type="ModelType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Represents the system under the brand.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="key" use="required">
+			<xs:annotation>
+				<xs:documentation>Represents the brand key.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="prefix" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Represents the brand prefix.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="SupportedSystemsType">
+		<xs:annotation>
+			<xs:documentation>Represents the list of systems being supported.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Brand" type="BrandType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Represents the brand information along with the supported systems in that brand.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="display" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Represents whether the systems information needs to be displayed or not.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ModulesType">
+		<xs:annotation>
+			<xs:documentation>Type for describing list of Modules</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Module" type="xs:string" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Type for describing Module name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InfoType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the information about the PIE identifier and the folder name on DIET share and on SVN</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="identifier" type="GUIDType">
+			<xs:annotation>
+				<xs:documentation>Specifies the PIE identifier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="folderName" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Specifies the folder name on DIET share and on SVN</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="OtherDeviceDependenciesType">
+		<xs:annotation>
+			<xs:documentation>Element describing device dependencies. Is not used now. Is present only for compatibility purposes.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OperatingSystem" type="OperatingSystemType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RuntimeType">
+		<xs:annotation>
+			<xs:documentation>Element for describing the runtime conditions. Not used now. Present only for backward compatibility purposes.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OperatingSystem" type="OperatingSystemType"/>
+			<xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PluginType">
+		<xs:annotation>
+			<xs:documentation>Element for describing Inventory/Execution Module</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Startfile" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Module file name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CliToStdout" type="CliToStdoutType">
+				<xs:annotation>
+					<xs:documentation>Command line required to invoke the module that does output to stdout</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CliToFile" type="CliToFileType">
+				<xs:annotation>
+					<xs:documentation>Command line required to invoke the module that redirects the output to a file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CliforceToStdout" type="CliToStdoutType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Command line required to invoke the module with force option that does output to stdout</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CliforceToFile" type="CliToFileType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Command line required to invoke the module with force option that redirects the output to a file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Modules" type="ModulesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Lists the file names required for this executable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Messages" type="MessagesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Lists the message strings corresponding to each of the possible return code from this executable. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FeatureSet" type="FeatureSetType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the feature information supported by this executable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnsupportedOperatingSystems" type="UnsupportedOperatingSystemsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Representing the list of operating systems not supported by Inventory/Execution Modules.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" use="required">
+			<xs:annotation>
+				<xs:documentation>Attribute describing the type of the Module.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="0">
+						<xs:annotation>
+							<xs:documentation>Enumeration for Inventory Module.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="1">
+						<xs:annotation>
+							<xs:documentation>Enumeration for Execution Module.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="description" use="required">
+			<xs:annotation>
+				<xs:documentation>Attribute describing the Module description.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="Execution">
+						<xs:annotation>
+							<xs:documentation>Enumeration that is to be used for Execution Module.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Inventory">
+						<xs:annotation>
+							<xs:documentation>Enumeration that is to be used for Inventory Module.</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="timeout" type="xs:unsignedLong" use="required">
+			<xs:annotation>
+				<xs:documentation>Timeout value specifying the amount of seconds the caller has to timeout after calling this executable.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PluginsType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the list of executables contained in this PIE</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Plugin" type="PluginType" minOccurs="2" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>Inventory and Execution Modules are necessary.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FMPWrapperInformationType">
+		<xs:annotation>
+			<xs:documentation>Type for describing the FMP wrapper</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Inventory">
+				<xs:annotation>
+					<xs:documentation>describes whether this wrapper supports inventory or not</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required">
+						<xs:annotation>
+							<xs:documentation>Has to be true if the wrapper supports inventory else it has to be false</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="source" type="xs:NMTOKENS" use="required">
+						<xs:annotation>
+							<xs:documentation>describes the source from which the inventory is to be done. It could be device or LC Log etc.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Update">
+				<xs:annotation>
+					<xs:documentation>describes whether this wrapper supports update and rollback or not</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="supported" type="xs:boolean" use="required">
+						<xs:annotation>
+							<xs:documentation>Has to be true if the wrapper supports update else it has to be false</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="rollback" type="xs:boolean" use="required">
+						<xs:annotation>
+							<xs:documentation>Has to be true if the rollback is to be supported else it has to be false.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="identifier" type="GUIDType" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the FMP wrapper identifier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:NMTOKEN" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the FMP wrapper name</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="filePathName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the file name of the executable (efi) to be invoked to apply the firmware update. 
+        Lifecycle Controller contains executables like “ApplicationWrapper.efi”, “FMPUpdateWrapper.efi”, “iDRACWrapper.efi” etc. 
+        Update Providers can refer to them also.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="digitalSignature" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>Has to be true if the FMP wrapper is digitally signed else it has to be false</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="driverFileName" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the driver name that is to be loaded prior to calling the wrapper.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FMPWrappersType">
+		<xs:annotation>
+			<xs:documentation>Describes the list of FMP wrappers included in the PIE</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="FMPWrapperInformation" type="FMPWrapperInformationType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CapsulePayloadPartType">
+		<xs:annotation>
+			<xs:documentation>Describes the type for describing the payload part</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PayloadImage">
+				<xs:annotation>
+					<xs:documentation>Describes the information about UEFI payload image being described.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="id" type="GUIDType" use="required">
+						<xs:annotation>
+							<xs:documentation>identifier of the payload (UpdateImageTypeId in EFI_FIRMWARE_MANAGEMENT_CAPSULE_IMAGE_HEADER)</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="filename" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>describes the file name in which this payload is to be present for the conventional execution module for applying update</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="version" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>Version of the payload (Version in EFI_FIRMWARE_MANAGEMENT_CAPSULE_IMAGE_HEADER)</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="skip" type="xs:boolean" use="required">
+						<xs:annotation>
+							<xs:documentation>has to be true if the payload is to be skipped while applying the update else has to be false</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="type" type="xs:string" use="optional">
+						<xs:annotation>
+							<xs:documentation>describes the payload type</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FMPDriver" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>describes the specific FMP driver required to apply the image.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="name" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>describes the FMP driver name</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="path" type="xs:string" use="optional">
+						<xs:annotation>
+							<xs:documentation>describes the path of the FMP driver</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="version" type="xs:string" use="required">
+						<xs:annotation>
+							<xs:documentation>describes the version of the FMP driver</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="comparisonOperator" type="ComparisonOperatorEnum" use="required">
+						<xs:annotation>
+							<xs:documentation>describes the comparision operator to be used for determining whether the current driver needs to be replaced or not.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PCIInfo" type="PCIInfoType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes the PCI ID's of the device for which the payload is to be applied.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PnPInfo" type="PnPInfoType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes the Plug and Play ID  of the device for which the payload is to be applied.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ComponentID" type="xs:unsignedLong" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes the component id of the device for which the payload is to be applied.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CapsulePayloadPartsType">
+		<xs:annotation>
+			<xs:documentation>Describes the list of types.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CapsulePayloadPart" type="CapsulePayloadPartType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>There should be one payload part for each of the payload file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PayloadType">
+		<xs:annotation>
+			<xs:documentation>Element for describing the payload.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Startfile" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Describes the first file in the payload.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Modules" type="ModulesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the files in the payload. Is present only for compatibility purposes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CapsulePayloadParts" type="CapsulePayloadPartsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the payloads in the capsule. Is present only when the Payload has UEFI 2.4 capsule.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the type of the payload. should be capsule for UEFI capsules</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the version of payload</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fmpWrapperIdentifier" type="GUIDType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the FMP wrapper identifier as the value enabling link to payload and the corresponding FMPWrapperInformation element.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RollbackInformationType">
+		<xs:annotation>
+			<xs:documentation>Element for describing the rollback information. This will be used by Lifecycle Controller for providing the rollback functionality.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ComponentID" type="xs:unsignedLong" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes the component id of the device for which the rollback information is provided.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="rollbackIdentifier" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the folder name in the rollback partition either in GUID format or minimum ComponentID
+        that will be used by Lifecycle Controller to store the payload. The value of this attributes shall remain same
+        throughout the lifecycle of a device across versions.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="rollbackVolume" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the name of Lifecycle Controller partition name under which the rollback data is to be stored.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fmpWrapperIdentifier" type="GUIDType" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the FMP wrapper identifier as the value enabling one to link RollbackInformation and the corresponding FMPWrapperInformation element.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="taskName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the value of task name to be used for applying update.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fmpWrapperVersion" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the minimum wrapper version needed by the Lifecycle Controller to apply the firmware update.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fmpIdentifier" type="GUIDType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the FMP Image Descriptor GUID.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="rollbackTimeout" type="xs:short" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the approximate timeout value till when the firmware update task need to wait.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="impactsTPMmeasurements" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Hsa the value as true if the firmware update of this device impacts TPM (Trusted Platform Module) measurement else it should have false as value.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fieldService" type="xs:NMTOKENS" use="optional">
+			<xs:annotation>
+				<xs:documentation>can have the value as forced or forcedonupgrade. For BIOS and CPLD it should be forced value.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fmpVendorCode" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the vendorCode name to be passed to FMP SetImage function</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fmpVendorCodeType" type="xs:unsignedLong" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the vendorCode type value as unsigned long.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fmpFileExtension" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the unique file extension of the payload to be used as the binary image to be used for FMP SetImage function.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="swapDeviceID" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Should have the value as true if the device changes the DeviceID based on NPAR attribute else it should have false as value.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="applicationName" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the application name</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		 <xs:attribute name="alternateRollbackIdentifier" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Represents the alternate rollback identifier.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="UnsupportedOperatingSystemsType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for representing the list of operating systems that are not supported.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OperatingSystem" type="OperatingSystemType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Element for representing an operating system not supported.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="commandLineType">
+		<xs:annotation>
+			<xs:documentation>Describes the command line parameter for inventory or execution module</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="value" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the command line parameter value.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="valueSeperator" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Describes the seperator for multiple values.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FeatureType">
+		<xs:annotation>
+			<xs:documentation>Element for describing the informmation required for Feature element.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CommandLine" type="commandLineType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the command line parameters information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="FeatureEnum" use="required">
+			<xs:annotation>
+				<xs:documentation>Name of feature.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FeatureSetType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for feature element.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Feature" type="FeatureType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes the feature information</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PIEConfigType">
+		<xs:annotation>
+			<xs:documentation>Defines the type for PIE configuration element.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Plugins" type="PluginsType">
+				<xs:annotation>
+					<xs:documentation>Describes the metadata about Inventory and Execution Modules in the PIE</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Info" type="InfoType">
+				<xs:annotation>
+					<xs:documentation>Describes the PIE's info to be used by Dell Change Management infrastructure.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RebootRequired" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes whether the Execution Module requires the system to reboot for applying the update or not.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CopyRequired" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes whether the copy of payload to current directory is required or not .</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FMPWrappers" type="FMPWrappersType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the FMP wrappers information contained in the PIE</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SupportedSystems" type="SupportedSystemsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the systems supported by this PIE.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Runtime" type="RuntimeType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the runtime conditions required by this PIE.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Payload" type="PayloadType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the payload information in the PIE.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnsupportedOperatingSystems" type="UnsupportedOperatingSystemsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Representing the list of operating systems not supported by this Software Component.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FeatureSet" type="FeatureSetType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the feature information supported by component.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Dependency" type="DependencyType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Represents the dependency information for the software component.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SoftDependency" type="SoftDependencyType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Represents the soft dependency information for the software component.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		
+		<xs:choice>
+                    
+			<xs:element name="RollbackInformation" type="RollbackInformationType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Describes the rollback information for the payload in this PIE.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+                     
+		</xs:choice>     
+               </xs:sequence>           
+		<xs:attribute name="SchemaVersion" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Describes the schema version used by the PIE</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="PIEConfig" type="PIEConfigType">
+		<xs:annotation>
+			<xs:documentation>Root element for the PIE configuration.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

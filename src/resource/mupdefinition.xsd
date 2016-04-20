@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   -  XML schema to enable automation of install and update of vendor supplied software packages that provided conformant with the MUP specification.
+   -  
+   -  This specification is provided to you under the terms of the non-disclosure agreement (NDA) in place between your company and Dell. Under the terms of the NDA, you must not redistribute the information
+   -  that appears in this document  to any party not involved in facilitating or participating in the development of product software. That is, this document should only be available to those parties who have a need to know. 
+   -
+   -  Last Updated:  2014/26/03
+   -  Schema version 2.4.3
+   -  Corresponding MUP Specification version:   2.4.3
+   -  Version 2.4.3 Changes - Made inventory metadata compulsory
+   -  Version 2.4.2 Changes - Introduced OSCodes.txt
+   -  Version 2.4.1 Changes - Added support for Win8.1
+   -
+   - Information in this document is subject to change without notice. 
+   - Copyright 2009-2013 Dell Inc. All rights reserved
+  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd" targetNamespace="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.4.3">
+	<!-- This was last reconciled with version 1.3 of the changemanagementcommon.xsd -->
+	<xs:include schemaLocation="changemanagementcommon.xsd"/>
+	<xs:element name="MUPDefinition">
+		<xs:annotation>
+			<xs:documentation>mupdefinition is the root element that defines the behavior of a MUP.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="packageinformation" type="T_PackageInformation">
+					<xs:annotation>
+						<xs:documentation>packageinformation provides basic information about a package.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="executable" type="T_Executable" minOccurs="1" maxOccurs="2">
+					<xs:annotation>
+						<xs:documentation>executable identifies the executable implementing the MUP required behaviors.  Please see T_Executable for details.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="behaviors" type="T_VendorBehaviors">
+					<xs:annotation>
+						<xs:documentation>Enumeration of the MUP defined behaviors supported by the vendor package including a mapping to the vendor command line options required to elicit said behavior.  A behavior shall be specified if and only if the vendor package supports the behavior.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="parameters" type="T_VendorParameters">
+					<xs:annotation>
+						<xs:documentation>Enumeration of MUP definied common modifiers supported by the vendor package, including a mapping to the corresponding vendor command line options.   A parameter  shall be specified if and only if the vendor package supports the modifier. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="returncodes" type="T_VendorReturnCodes">
+					<xs:annotation>
+						<xs:documentation>ReturnCodes lists the exit status defined by Dell. It is used to communicate the exit statuses the vendor is capable of returning.  An exit status shall be listed if and only if the vendor package is capable of indicating that status.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="driverarchive" type="T_DriverArchive" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This element provides information about how to access drivers for imaging inside from this MUP.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="inventorymetadata" type="T_InventoryMetadata">
+					<xs:annotation>
+						<xs:documentation>This element provides inventory metadata used to determine whether a version of this package is already installed on a target system.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="T_Executable">
+		<xs:annotation>
+			<xs:documentation>This type defines the behavior of the executable that supports the command line IO requirements of the MUP specification.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="executablename" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>identifies the executable that is invoked that conforms to the MUP requirements.  The executable is assumed to be added to the path variable or located adjacent to the mup.xml in the same directly.  Therefore no path information is allowed.  </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requiredparameters" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>requiredparameters identifies one or more parameters the vendor's executable identified by executablename requires to be provided for every execution.  These parameters do not correspond to a specific behavior defined by the MUP specification.   This element shall not be specified if there are no parameters required for every executation of the vendor package.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="commandlineparameter" type="T_CommandLineParameter" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Each commandlineparameter contains a string that will be passed to the executable upon invocation.  The strings will be passed exactly as specified.  They are concatenated to the command line immediately following the executable name, in the order the elements are provided. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="architecture" type="Enum_OSArchitecture" use="optional">
+			<xs:annotation>
+				<xs:documentation>Identifies the architecture of the executable.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+    <xs:attribute name="timeout" type="xs:integer" use="optional">
+      <xs:annotation>
+        <xs:documentation>Describes the timeout value in seconds, within which the executable would execute. By default, it is 300 (5 minutes). The absence of this attribute is treated as 5 minutes default value by the DUP framework. If specified, the timeout value is taken from this attribute. </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="T_CommandLineParameter" mixed="false">
+		<xs:annotation>
+			<xs:documentation>T_CommandLineParameter is a placeholder element for specifying an exact command line parameter string.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="T_VendorParameters">
+		<xs:sequence>
+			<xs:element name="parametermapping" type="T_VendorParameterMapping" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Each parameter element corresponds to a dell defined parameter.  Each parameter contains at least one parameter mapping.The contained DellOption identifies the dell specified syntax.  If this syntax is supported by the vendor, there will be zero VendorOption elements.  If the dell syntax needs to be mapped to vendor syntax, there will be one or more VendorOption elements.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_VendorParameterMapping">
+		<xs:annotation>
+			<xs:documentation>This type defines a mapping from a dell defined command line parameter to the corresponding vendor parameter(s).</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vendoroption" type="T_VendorOption" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Identifies the corresponding vendor mapping required.  For each occurrence of a DellOption, all of the vendor options shall be supplied to the vendor executable.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="Enum_CommandLineParameterNames" use="required">
+			<xs:annotation>
+				<xs:documentation>Identifies the MUP defined common modifier being mapped to the vendor options.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="T_OptionContainer">
+		<xs:annotation>
+			<xs:documentation>This type defines how a vendor specifies nested command line parameters.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="containervalue" type="T_OptionValueConstraint"/>
+			<xs:choice>
+				<xs:element name="optionvalue" type="T_OptionValueConstraint"/>
+				<xs:element name="container" type="T_OptionContainer"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="delimiter">
+			<xs:annotation>
+				<xs:documentation>identifies delimiter between containervalue and subsequent first optionvalue. The absence of this attribute indicates </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="T_VendorReturnCodes">
+		<xs:sequence>
+			<xs:element name="returncodemapping" type="T_VendorReturnCodeMapping" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Each returncodemapping element corresponds to an exit status defined by Dell.  Each returncodemapping corresponds to exactly one exit status.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="T_VendorReturnCodeMapping">
+		<xs:annotation>
+			<xs:documentation>This type defines the mapping from a Dell specified return code the vendor equivalent.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vendorreturncode" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Each vendorreturncode element contains exactly one  decimal exit code the vendor installer may return that corresponds to the exit status identified by the name attribute of the containing returncodemapping element.   </xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="Enum_ReturnCodeNames" use="required">
+			<xs:annotation>
+				<xs:documentation>Identifies the MUP defined exit status supported.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="T_PackageInformation">
+		<xs:annotation>
+			<xs:documentation>General information about the MUP package being provided.</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="mupspecificationversion">
+				<xs:annotation>
+					<xs:documentation>programmatic tag indicating the version of the MUP specification and mupdefinition schema used to generate this package.  The value of this element shall be the value of schema@schemaversion attribute of this schema definition.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\d+\.\d+\.\d+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="name">
+				<xs:annotation>
+					<xs:documentation>common name by which this package is referred to in communication between Dell and IHV.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="version">
+				<xs:annotation>
+					<xs:documentation>identifies the version of the software installed.   For any package other than driver only, this value shall duplicate the value specified in the inventory metadata section (msi->version, RebistryKey->value, SoftwareIdentity->VersionString).  For a driver only package, the version shall duplicate the pnpid->DriverVersion value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="installertype" type="Enum_InstallerTypes">
+				<xs:annotation>
+					<xs:documentation>informative tag indicating how the underlying installer was developed</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="packagegrouping" type="Enum_PackageTypes">
+				<xs:annotation>
+					<xs:documentation>tag indicating whether this package is part of a pair or not</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="packagingtype" type="Enum_PackagingTypes">
+				<xs:annotation>
+					<xs:documentation>informative tag indicating whether final deliverable was a single installer or a zip archive containing a series of files.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="releasetype" type="Enum_ReleaseTypesProgrammatic">
+				<xs:annotation>
+					<xs:documentation>programmatic tag indicating the type of vendor content contained.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="supportedoperatingsystems">
+				<xs:annotation>
+					<xs:documentation>array of identifiers indicating the operating systems supported by this package. For OS agnostic content such as BIOS, this indicates the operating systems in which the installer is supported.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="osidentifier" type="T_OSIdentification" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>There shall be an instance of osidentifier for each operating system supported by the MUP.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+      <xs:element name="content" type="T_Content">
+        <xs:annotation>
+          <xs:documentation>This element describes the content being carried in this package.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="T_InventoryMetadata">
+		<xs:annotation>
+			<xs:documentation>This type defines the structure for providing inventory metadata.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="bios" type="T_BIOSInformation">
+				<xs:annotation>
+					<xs:documentation>if a MUP package contains a platform BIOS, this element is used to convey the version reported in SMBIOS for the payload.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:element name="extractdriversidentifier" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>For vendor software that consists of a driver and control application, the extractdrivers behavior results in content that enables the install of the driver only via PnP.   This element reports the inventory metadata that identifies the driver only install.   If the vendor software does not consist of a driver and discrete control application, and the result of an install via setup or of the results of the extractdrivers behavior is identical, this element shall not be specified.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="T_SelectInventoryMetadata"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="fullpackageidentifier">
+					<xs:annotation>
+						<xs:documentation>This element specifies the inventory method used to determine if the full MUP package has been installed on a system.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="T_SelectInventoryMetadata"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="T_SelectInventoryMetadata">
+		<xs:choice>
+			<xs:element name="pnpids" type="T_ListPnPDevice">
+				<xs:annotation>
+					<xs:documentation>Used to communicate PnPId and driver information for MUPs containing a driver.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="msis" type="T_ListMSI">
+				<xs:annotation>
+					<xs:documentation>If the inventory method chosen is MSI, this element is used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registrykeys" type="T_ListRegistryKey">
+				<xs:annotation>
+					<xs:documentation>if the inventory method chosen is registrykey, this element is used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="softwareidentityinstances" type="T_ListSoftwareIdentity">
+				<xs:annotation>
+					<xs:documentation>If the inventory method chosen is it populate an instance of CIM_SoftwareIdentity, this element is used.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="T_VendorBehaviors">
+		<xs:annotation>
+			<xs:documentation>This type defines the structure for advertising supported behaviors and the associated command line parrameter.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="behavior" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="vendoroption" type="T_VendorOption" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>The vendor installer may require multiple options be specified to implement a behavior.   For example, to invoke a silent installation in Install Shield MSI, "/s /v/qn" is required.  If there are multiple combinations to invoke a behavior, exactly one shall be specified.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="name" type="Enum_Behaviors" use="required">
+						<xs:annotation>
+							<xs:documentation>Identifies the MUP defined behavior being mapped to the vendor options.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+  <xs:complexType name="T_Content">
+    <xs:annotation>
+      <xs:documentation>Type for describing the contained drivers and/or firmware information.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Device" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Describes the device and the content carried for that device.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:choice>
+              <xs:element name="PCIInfo" type="T_PCIInfo" minOccurs="0" maxOccurs="unbounded"></xs:element>
+              <xs:element name="PnPInfo" type="T_PnPInfo" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			  <xs:element name="Generic" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+            </xs:choice>
+            <xs:element name="Image" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Describes the images carried for this devices</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="file" type="xs:string" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>Describes the files for this image</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="supportedoperatingsystems" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>array of identifiers indicating the operating systems supported by this Image. If this node is missing then package's operating systems are deemed applicable.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="osidentifier" type="T_OSIdentification" maxOccurs="unbounded">
+                          <xs:annotation>
+                            <xs:documentation>There shall be an instance of osidentifier for each operating system supported by the image.</xs:documentation>
+                          </xs:annotation>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+                <xs:attribute name="type" type="Enum_ReleaseTypesProgrammatic">
+                  <xs:annotation>
+                    <xs:documentation>Describes the image type being described</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="version" type="xs:string">
+                  <xs:annotation>
+                    <xs:documentation>Describes the version of the image being described</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="componentID" type="xs:unsignedLong">
+            <xs:annotation>
+              <xs:documentation>Describes the component identifier for the device.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+	<xs:complexType name="T_VendorOption">
+		<xs:annotation>
+			<xs:documentation>This type defines the representation of a vendor command line option.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:annotation>
+				<xs:documentation>If the vendor option may be specified directly on the command line without being combined with or wrapped in a common parameter, the optionvalue element is provided and identifes the corresponding vendor option.  If the vendor command line syntax requires some parameters/options to be aggregated into a common package, the contaner element is used to identify the common wrapping commandline parameter.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="optionvalue" type="T_OptionValueConstraint">
+				<xs:annotation>
+					<xs:documentation>A single whitespace delimited command line option.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="container" type="T_OptionContainer">
+				<xs:annotation>
+					<xs:documentation>A wrapper option such as /v for Install Shield MSI programs.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="T_DriverArchive">
+		<xs:choice>
+			<xs:element name="alldriversroot">
+				<xs:annotation>
+					<xs:documentation>This element contains the relative path to the root directory. Child directories contain drivers for install via INF pursuant to the requirements of the MUP specification, including behavior, content, and folder structure.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>
