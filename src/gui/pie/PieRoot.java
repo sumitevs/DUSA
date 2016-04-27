@@ -32,15 +32,15 @@ public class PieRoot extends javax.swing.JPanel {
     }
 
     public JCheckBox getjCheckBox3() {
-        return jCheckBox3;
+        return uefiCapCheckBox;
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return pieIdentifierField;
     }
 
     public JTextField getjTextField2() {
-        return jTextField2;
+        return folderNameField;
     }
     
     
@@ -56,9 +56,9 @@ public class PieRoot extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        pieIdentifierField = new javax.swing.JTextField();
+        folderNameField = new javax.swing.JTextField();
+        uefiCapCheckBox = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 0), null, new java.awt.Color(0, 0, 0)));
@@ -70,12 +70,12 @@ public class PieRoot extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel2.setText("Folder Name");
 
-        jTextField1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        pieIdentifierField.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        folderNameField.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
 
-        jCheckBox3.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jCheckBox3.setText("Payload has UEFI 2.4 capsule");
+        uefiCapCheckBox.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        uefiCapCheckBox.setText("Payload has UEFI 2.4 capsule");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -85,7 +85,7 @@ public class PieRoot extends javax.swing.JPanel {
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox3)
+                        .addComponent(uefiCapCheckBox)
                         .addGap(0, 271, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,8 +93,8 @@ public class PieRoot extends javax.swing.JPanel {
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jTextField1))
+                            .addComponent(folderNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(pieIdentifierField))
                         .addGap(81, 81, 81))))
         );
         layout.setVerticalGroup(
@@ -103,23 +103,23 @@ public class PieRoot extends javax.swing.JPanel {
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pieIdentifierField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(folderNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox3)
+                .addComponent(uefiCapCheckBox)
                 .addContainerGap(507, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JTextField folderNameField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField pieIdentifierField;
+    private javax.swing.JCheckBox uefiCapCheckBox;
     // End of variables declaration//GEN-END:variables
 }

@@ -49,9 +49,9 @@ public class Devices extends javax.swing.JPanel {
         jTextField5 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        pciTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        pnpTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -85,8 +85,8 @@ public class Devices extends javax.swing.JPanel {
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 13)); // NOI18N
         jLabel12.setText("PCI IDs of devices");
 
-        jTable1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        pciTable.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        pciTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -109,15 +109,15 @@ public class Devices extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        pciTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable1MouseReleased(evt);
+                pciTableMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(pciTable);
 
-        jTable2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        pnpTable.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        pnpTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -140,12 +140,12 @@ public class Devices extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnpTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable2MouseReleased(evt);
+                pnpTableMouseReleased(evt);
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(pnpTable);
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jButton1.setText("Remove");
@@ -293,50 +293,50 @@ public class Devices extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) pciTable.getModel();
         if(tableModel.getRowCount()>0){
-            tableModel.removeRow(jTable1.getSelectedRow());
-            jTable1.setModel(tableModel);
+            tableModel.removeRow(pciTable.getSelectedRow());
+            pciTable.setModel(tableModel);
         }
         jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
+    private void pciTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pciTableMouseReleased
         jButton1.setEnabled(true);
-    }//GEN-LAST:event_jTable1MouseReleased
+    }//GEN-LAST:event_pciTableMouseReleased
 
-    private void jTable2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseReleased
+    private void pnpTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnpTableMouseReleased
         jButton3.setEnabled(true);
-    }//GEN-LAST:event_jTable2MouseReleased
+    }//GEN-LAST:event_pnpTableMouseReleased
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable2.getModel();
+        tableModel = (DefaultTableModel) pnpTable.getModel();
         if(tableModel.getRowCount()>0){
-            tableModel.removeRow(jTable2.getSelectedRow());
-            jTable2.setModel(tableModel);
+            tableModel.removeRow(pnpTable.getSelectedRow());
+            pnpTable.setModel(tableModel);
         }
         jButton3.setEnabled(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public JTable getjTable1() {
-        return jTable1;
+        return pciTable;
     }
 
     public JTable getjTable2() {
-        return jTable2;
+        return pnpTable;
     }
 
     
     public void addRowPCID(Object[] newRow) {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) pciTable.getModel();
         tableModel.addRow(newRow);
     }
     
     public void addRowPlug(Object[] newRow) {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable2.getModel();
+        tableModel = (DefaultTableModel) pnpTable.getModel();
         tableModel.addRow(newRow);
     }
 
@@ -355,14 +355,14 @@ public class Devices extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTable pciTable;
+    private javax.swing.JTable pnpTable;
     // End of variables declaration//GEN-END:variables
 
     private void clearPCIDFields() {
@@ -380,19 +380,19 @@ public class Devices extends javax.swing.JPanel {
     public void clearData(){
         clearPCIDFields();
         clearPlugFields();
-        DefaultTableModel tableModel = (DefaultTableModel ) jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel ) pciTable.getModel();
         tableModel.setRowCount(0);
-        tableModel = (DefaultTableModel ) jTable2.getModel();
+        tableModel = (DefaultTableModel ) pnpTable.getModel();
         tableModel.setRowCount(0);        
     }
 
     void load(PayloadInfo pItem) {
         clearData();
-        DefaultTableModel tableModel = (DefaultTableModel ) jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel ) pciTable.getModel();
         for(PCIIDs item:pItem.getDeviceInfo().getPciIds()){
             tableModel.addRow(new Object[]{item.getDeviceID(),item.getVendorID(),item.getSubDeviceID(),item.getSubVendorID()});
         }
-        tableModel = (DefaultTableModel ) jTable2.getModel();
+        tableModel = (DefaultTableModel ) pnpTable.getModel();
         for(PlugPlayIDs item:pItem.getDeviceInfo().getPlugPlayIds()){
             tableModel.addRow(new Object[]{item.getDeviceID(),item.getProductID()});
         }

@@ -27,14 +27,14 @@ public class Image extends javax.swing.JPanel {
     Image(ImageInventory imageInventory) {
         osList = new DefaultListModel();
         initComponents();
-        jTable1.getModel().addTableModelListener(new TableModelListener() {
+        imagesTable.getModel().addTableModelListener(new TableModelListener() {
             DefaultListModel listModel;
 
             @Override
             public void tableChanged(TableModelEvent tme) {
                 listModel = new DefaultListModel();
-                for (int i = 0; i < jTable1.getRowCount(); i++) {
-                    listModel.addElement(jTable1.getValueAt(i, 0));
+                for (int i = 0; i < imagesTable.getRowCount(); i++) {
+                    listModel.addElement(imagesTable.getValueAt(i, 0));
                 }
                 imageInventory.getjList1().setModel(listModel);
             }
@@ -58,7 +58,7 @@ public class Image extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        imagesTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -88,7 +88,7 @@ public class Image extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel5.setText("Supported OS");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        imagesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -111,12 +111,12 @@ public class Image extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        imagesTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable1MouseReleased(evt);
+                imagesTableMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(imagesTable);
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jButton1.setText("Remove");
@@ -233,7 +233,7 @@ public class Image extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Enter Image name and type.");
         } else {
             DefaultTableModel tableModel = new DefaultTableModel();
-            tableModel = (DefaultTableModel) jTable1.getModel();
+            tableModel = (DefaultTableModel) imagesTable.getModel();
             List osList = jList1.getSelectedValuesList();
             StringBuilder osString = new StringBuilder();
             osList.stream().forEach((os) -> {
@@ -251,17 +251,17 @@ public class Image extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) imagesTable.getModel();
         if (tableModel.getRowCount() > 0) {
-            tableModel.removeRow(jTable1.getSelectedRow());
-            jTable1.setModel(tableModel);
+            tableModel.removeRow(imagesTable.getSelectedRow());
+            imagesTable.setModel(tableModel);
         }
         jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
+    private void imagesTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imagesTableMouseReleased
         jButton1.setEnabled(true);
-    }//GEN-LAST:event_jTable1MouseReleased
+    }//GEN-LAST:event_imagesTableMouseReleased
 
     private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
         // TODO add your handling code here:
@@ -274,7 +274,7 @@ public class Image extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField3FocusLost
 
     public JTable getjTable1() {
-        return jTable1;
+        return imagesTable;
     }
 
     public JList getjList1() {
@@ -303,15 +303,16 @@ public class Image extends javax.swing.JPanel {
         jTextField3.setText("");
         jTextField4.setText("");
         jComboBox1.setSelectedIndex(0);
-        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) imagesTable.getModel();
         tableModel.setRowCount(0);
     }
 
     public Object[][] getImageData() {
-        return getTableData(this.jTable1).clone();
+        return getTableData(this.imagesTable).clone();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable imagesTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
@@ -324,7 +325,6 @@ public class Image extends javax.swing.JPanel {
     private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

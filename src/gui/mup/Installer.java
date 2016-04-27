@@ -30,26 +30,26 @@ public class Installer extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox32bit = new javax.swing.JCheckBox();
+        jCheckBox64bit = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 0), null, new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(527, 673));
 
-        jCheckBox1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jCheckBox1.setSelected(true);
-        jCheckBox1.setText("32-bit Installer");
-        jCheckBox1.setEnabled(false);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox32bit.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        jCheckBox32bit.setSelected(true);
+        jCheckBox32bit.setText("32-bit Installer");
+        jCheckBox32bit.setEnabled(false);
+        jCheckBox32bit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                jCheckBox32bitActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jCheckBox2.setSelected(true);
-        jCheckBox2.setText("64-bit Installer");
+        jCheckBox64bit.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        jCheckBox64bit.setSelected(true);
+        jCheckBox64bit.setText("64-bit Installer");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -58,47 +58,47 @@ public class Installer extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox1))
+                    .addComponent(jCheckBox64bit)
+                    .addComponent(jCheckBox32bit))
                 .addContainerGap(351, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(jCheckBox1)
+                .addComponent(jCheckBox32bit)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
+                .addComponent(jCheckBox64bit)
                 .addContainerGap(544, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jCheckBox32bitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox32bitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jCheckBox32bitActionPerformed
 
     public void setButtonsActionListener(ActionListener listener){
-        jCheckBox1.addActionListener(listener);
-        jCheckBox2.addActionListener(listener);
+        jCheckBox32bit.addActionListener(listener);
+        jCheckBox64bit.addActionListener(listener);
     }
 
     public JCheckBox getjCheckBox1() {
-        return jCheckBox1;
+        return jCheckBox32bit;
     }
 
     public JCheckBox getjCheckBox2() {
-        return jCheckBox2;
+        return jCheckBox64bit;
     }
     
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox32bit;
+    private javax.swing.JCheckBox jCheckBox64bit;
     // End of variables declaration//GEN-END:variables
 
     public void clearField() {
-        jCheckBox1.setSelected(true);
-        jCheckBox2.setSelected(true);
+        jCheckBox32bit.setSelected(true);
+        jCheckBox64bit.setSelected(true);
     }
 }

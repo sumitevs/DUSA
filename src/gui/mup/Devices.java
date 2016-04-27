@@ -48,7 +48,7 @@ public class Devices extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        devicesTable = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox();
@@ -118,8 +118,8 @@ public class Devices extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        devicesTable.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        devicesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -142,12 +142,12 @@ public class Devices extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        devicesTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable1MouseReleased(evt);
+                devicesTableMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(devicesTable);
 
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel11.setText("Device type");
@@ -284,10 +284,10 @@ public class Devices extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) devicesTable.getModel();
         if(tableModel.getRowCount()>0){
-            tableModel.removeRow(jTable1.getSelectedRow());
-            jTable1.setModel(tableModel);
+            tableModel.removeRow(devicesTable.getSelectedRow());
+            devicesTable.setModel(tableModel);
         }
         jButton3.setEnabled(false);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -349,9 +349,9 @@ public class Devices extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
+    private void devicesTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_devicesTableMouseReleased
         jButton3.setEnabled(true);
-    }//GEN-LAST:event_jTable1MouseReleased
+    }//GEN-LAST:event_devicesTableMouseReleased
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -425,20 +425,21 @@ public class Devices extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField6FocusLost
 
     public JTable getjTable1() {
-        return jTable1;
+        return devicesTable;
     }
     
     void setjTable1(Object[][] tableData) {
-        DefaultTableModel tableModel = (DefaultTableModel) this.jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) this.devicesTable.getModel();
         tableModel.setRowCount(0);
         for (Object[] tableData1 : tableData) {
             tableModel.addRow(tableData1);
         }
-        this.jTable1.setModel(tableModel);
+        this.devicesTable.setModel(tableModel);
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable devicesTable;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox jComboBox2;
@@ -451,7 +452,6 @@ public class Devices extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -470,13 +470,13 @@ public class Devices extends javax.swing.JPanel {
 
     void clearField() {
         clearTextFields();
-        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) devicesTable.getModel();
         tableModel.setRowCount(0);
     }
 
     public void addRow(Object[] object) {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) devicesTable.getModel();
         tableModel.addRow(object);
 
     }

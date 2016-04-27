@@ -35,7 +35,7 @@ public class AddConstituents extends javax.swing.JPanel {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        constituentIdField = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -48,10 +48,10 @@ public class AddConstituents extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel10.setText("Constituent ID*");
 
-        jTextField1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        constituentIdField.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        constituentIdField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                constituentIdFieldActionPerformed(evt);
             }
         });
 
@@ -93,7 +93,7 @@ public class AddConstituents extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(constituentIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2)
                                 .addGap(18, 18, 18)
@@ -111,16 +111,16 @@ public class AddConstituents extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(constituentIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void constituentIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_constituentIdFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_constituentIdFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int returnVal = fileChooser.showOpenDialog(this);
@@ -141,7 +141,7 @@ public class AddConstituents extends javax.swing.JPanel {
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return constituentIdField;
     }
 
     public Image getImage() {
@@ -153,19 +153,19 @@ public class AddConstituents extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField constituentIdField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     private javax.swing.JFileChooser fileChooser;
     private final Image image;
     private final ImageInventory imageInventory;
 
     public void clearField() {
-        jTextField1.setText("");
+        constituentIdField.setText("");
         image.clearField();
         imageInventory.clearField();
         

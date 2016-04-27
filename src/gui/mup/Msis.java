@@ -52,7 +52,7 @@ public class Msis extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        msisTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(204, 204, 204));
@@ -122,7 +122,7 @@ public class Msis extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        msisTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -138,12 +138,12 @@ public class Msis extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        msisTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable1MouseReleased(evt);
+                msisTableMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(msisTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -236,17 +236,17 @@ public class Msis extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) msisTable.getModel();
         if (tableModel.getRowCount() > 0) {
-            tableModel.removeRow(jTable1.getSelectedRow());
-            jTable1.setModel(tableModel);
+            tableModel.removeRow(msisTable.getSelectedRow());
+            msisTable.setModel(tableModel);
         }
         jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
+    private void msisTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_msisTableMouseReleased
         jButton1.setEnabled(true);
-    }//GEN-LAST:event_jTable1MouseReleased
+    }//GEN-LAST:event_msisTableMouseReleased
 
     private void jTextField5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusLost
         // TODO add your handling code here:
@@ -269,11 +269,11 @@ public class Msis extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField7FocusLost
 
     public JTable getjTable1() {
-        return jTable1;
+        return msisTable;
     }
 
     public Object[][] getTableData() {
-        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) msisTable.getModel();
         int nRow = dtm.getRowCount(), nCol = dtm.getColumnCount();
         Object[][] tableData = new Object[nRow][nCol];
         for (int i = 0; i < nRow; i++) {
@@ -285,16 +285,16 @@ public class Msis extends javax.swing.JPanel {
     }
     
     public void setjTable1(JTable jTable1) {
-        this.jTable1.setModel(jTable1.getModel());
+        this.msisTable.setModel(jTable1.getModel());
     }
 
     void setjTable1(Object[][] tableData) {
-        DefaultTableModel tableModel = (DefaultTableModel) this.jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) this.msisTable.getModel();
         tableModel.setRowCount(0);
         for (Object[] tableData1 : tableData) {
             tableModel.addRow(tableData1);
         }
-        this.jTable1.setModel(tableModel);
+        this.msisTable.setModel(tableModel);
     }
     
     void clearTextFields(){
@@ -318,7 +318,6 @@ public class Msis extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -326,17 +325,18 @@ public class Msis extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTable msisTable;
     // End of variables declaration//GEN-END:variables
 
     void clearField() {
         clearTextFields();
-        DefaultTableModel tableModel = (DefaultTableModel ) jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel ) msisTable.getModel();
         tableModel.setRowCount(0);
     }
 
     public void addRow(Object[] newRow) {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) msisTable.getModel();
         tableModel.addRow(newRow);
         clearTextFields();
     }

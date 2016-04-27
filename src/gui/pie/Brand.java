@@ -56,7 +56,7 @@ public class Brand extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        brandTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
@@ -75,10 +75,10 @@ public class Brand extends javax.swing.JPanel {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        modelTable = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jComboBox3 = new javax.swing.JComboBox();
+        lobComboBox = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
@@ -95,8 +95,8 @@ public class Brand extends javax.swing.JPanel {
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 13)); // NOI18N
         jLabel12.setText("Brand along with the systems supported");
 
-        jTable1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        brandTable.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        brandTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -119,12 +119,12 @@ public class Brand extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        brandTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable1MouseReleased(evt);
+                brandTableMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(brandTable);
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jButton1.setText("Remove");
@@ -215,8 +215,8 @@ public class Brand extends javax.swing.JPanel {
             }
         });
 
-        jTable2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        modelTable.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        modelTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -239,26 +239,26 @@ public class Brand extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+        modelTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable2MouseReleased(evt);
+                modelTableMouseReleased(evt);
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(modelTable);
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 13)); // NOI18N
         jLabel9.setText("Brand Information");
 
-        jComboBox3.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jComboBox3.setMaximumSize(new java.awt.Dimension(31, 22));
-        jComboBox3.addMouseListener(new java.awt.event.MouseAdapter() {
+        lobComboBox.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        lobComboBox.setMaximumSize(new java.awt.Dimension(31, 22));
+        lobComboBox.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jComboBox3MouseReleased(evt);
+                lobComboBoxMouseReleased(evt);
             }
         });
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        lobComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                lobComboBoxActionPerformed(evt);
             }
         });
 
@@ -346,7 +346,7 @@ public class Brand extends javax.swing.JPanel {
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(jLabel1)
                                             .addGap(18, 18, 18)
-                                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lobComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(jTextField1)
@@ -376,7 +376,7 @@ public class Brand extends javax.swing.JPanel {
                         .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lobComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
                             .addComponent(jButton3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -478,11 +478,11 @@ public class Brand extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        if (key.isEmpty() || prefix.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Select line of business.");
-        } else if (jTable2.getRowCount()<1) {
+        } else if (modelTable.getRowCount()<1) {
             JOptionPane.showMessageDialog(this, "Add at least one Model.");
         }else {
             addRowBrand(new Object[]{key,prefix});
-            brandInfo.getBrandInfoList().add(new BrandInfoItem(key,prefix,listA,jTable2));
+            brandInfo.getBrandInfoList().add(new BrandInfoItem(key,prefix,listA,modelTable));
             clearBrandFields();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -490,22 +490,22 @@ public class Brand extends javax.swing.JPanel {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
-        brandInfo.removeItem(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString());
+        tableModel = (DefaultTableModel) brandTable.getModel();
+        brandInfo.removeItem(brandTable.getValueAt(brandTable.getSelectedRow(), 0).toString());
         if(tableModel.getRowCount()>0){
-            tableModel.removeRow(jTable1.getSelectedRow());
-            jTable1.setModel(tableModel);
+            tableModel.removeRow(brandTable.getSelectedRow());
+            brandTable.setModel(tableModel);
         }
         jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
+    private void brandTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brandTableMouseReleased
         jButton1.setEnabled(true);
-    }//GEN-LAST:event_jTable1MouseReleased
+    }//GEN-LAST:event_brandTableMouseReleased
 
-    private void jTable2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseReleased
+    private void modelTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modelTableMouseReleased
         jButton8.setEnabled(true);
-    }//GEN-LAST:event_jTable2MouseReleased
+    }//GEN-LAST:event_modelTableMouseReleased
 
     private void jList2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseReleased
         jButton6.setEnabled(true);
@@ -513,20 +513,20 @@ public class Brand extends javax.swing.JPanel {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable2.getModel();
+        tableModel = (DefaultTableModel) modelTable.getModel();
         if(tableModel.getRowCount()>0){
-            tableModel.removeRow(jTable2.getSelectedRow());
-            jTable2.setModel(tableModel);
+            tableModel.removeRow(modelTable.getSelectedRow());
+            modelTable.setModel(tableModel);
         }
         jButton8.setEnabled(false);
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jComboBox3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox3MouseReleased
+    private void lobComboBoxMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lobComboBoxMouseReleased
 
-    }//GEN-LAST:event_jComboBox3MouseReleased
+    }//GEN-LAST:event_lobComboBoxMouseReleased
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-       String lob = jComboBox3.getSelectedItem().toString();
+    private void lobComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lobComboBoxActionPerformed
+       String lob = lobComboBox.getSelectedItem().toString();
         try {
             DocumentBuilderFactory domFactory
                     = DocumentBuilderFactory.newInstance();
@@ -564,7 +564,7 @@ public class Brand extends javax.swing.JPanel {
         } catch (ParserConfigurationException | SAXException | IOException | XPathExpressionException ex) {
             ex.printStackTrace();
         }
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_lobComboBoxActionPerformed
 
     private void jList1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseReleased
         jButton4.setEnabled(true);
@@ -593,6 +593,7 @@ public class Brand extends javax.swing.JPanel {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable brandTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -603,7 +604,6 @@ public class Brand extends javax.swing.JPanel {
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
@@ -620,11 +620,11 @@ public class Brand extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JComboBox lobComboBox;
+    private javax.swing.JTable modelTable;
     // End of variables declaration//GEN-END:variables
     private final DefaultListModel listB;
     private final DefaultListModel listA;
@@ -634,13 +634,13 @@ public class Brand extends javax.swing.JPanel {
 
     private void addRowBrand(Object[] newRow) {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) brandTable.getModel();
         tableModel.addRow(newRow);        
     }
 
     private void addRowModel(Object[] newRow) {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable2.getModel();
+        tableModel = (DefaultTableModel) modelTable.getModel();
         tableModel.addRow(newRow);
     }
 
@@ -655,7 +655,7 @@ public class Brand extends javax.swing.JPanel {
 
     private void clearBrandFields() {
         clearModelTextFields();
-        DefaultTableModel tableModel = (DefaultTableModel ) jTable2.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel ) modelTable.getModel();
         tableModel.setRowCount(0);
         DefaultListModel listModel=(DefaultListModel) jList1.getModel();
         listModel.removeAllElements();
@@ -664,12 +664,12 @@ public class Brand extends javax.swing.JPanel {
     
     private void clearData(){
         clearBrandFields();
-        DefaultTableModel tableModel = (DefaultTableModel ) jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel ) brandTable.getModel();
         tableModel.setRowCount(0);
     }
 
     private void populateLobDropdown() {
-        DefaultComboBoxModel model = (DefaultComboBoxModel) jComboBox3.getModel();
+        DefaultComboBoxModel model = (DefaultComboBoxModel) lobComboBox.getModel();
         try {
             DocumentBuilderFactory domFactory
                     = DocumentBuilderFactory.newInstance();

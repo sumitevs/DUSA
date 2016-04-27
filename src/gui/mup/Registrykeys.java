@@ -46,7 +46,7 @@ public class Registrykeys extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        registryTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -109,7 +109,7 @@ public class Registrykeys extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        registryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -125,12 +125,12 @@ public class Registrykeys extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        registryTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable1MouseReleased(evt);
+                registryTableMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(registryTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -213,17 +213,17 @@ public class Registrykeys extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) registryTable.getModel();
         if (tableModel.getRowCount() > 0) {
-            tableModel.removeRow(jTable1.getSelectedRow());
-            jTable1.setModel(tableModel);
+            tableModel.removeRow(registryTable.getSelectedRow());
+            registryTable.setModel(tableModel);
         }
         jButton2.setEnabled(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
+    private void registryTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registryTableMouseReleased
         jButton2.setEnabled(true);
-    }//GEN-LAST:event_jTable1MouseReleased
+    }//GEN-LAST:event_registryTableMouseReleased
 
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
         // TODO add your handling code here:
@@ -246,11 +246,11 @@ public class Registrykeys extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField5FocusLost
 
     public JTable getjTable1() {
-        return jTable1;
+        return registryTable;
     }
     
     public Object[][] getTableData() {
-        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel dtm = (DefaultTableModel) registryTable.getModel();
         int nRow = dtm.getRowCount(), nCol = dtm.getColumnCount();
         Object[][] tableData = new Object[nRow][nCol];
         for (int i = 0; i < nRow; i++) {
@@ -262,12 +262,12 @@ public class Registrykeys extends javax.swing.JPanel {
     }
 
     void setjTable1(Object[][] tableData) {
-        DefaultTableModel tableModel = (DefaultTableModel) this.jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) this.registryTable.getModel();
         tableModel.setRowCount(0);
         for (Object[] tableData1 : tableData) {
             tableModel.addRow(tableData1);
         }
-        this.jTable1.setModel(tableModel);
+        this.registryTable.setModel(tableModel);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -279,17 +279,17 @@ public class Registrykeys extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTable registryTable;
     // End of variables declaration//GEN-END:variables
 
     void clearField() {
         clearTextFields();
-        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) registryTable.getModel();
         tableModel.setRowCount(0);
     }
 
@@ -303,7 +303,7 @@ public class Registrykeys extends javax.swing.JPanel {
 
     public void addRow(Object[] newRow) {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) registryTable.getModel();
         tableModel.addRow(newRow);
         clearTextFields();
 

@@ -38,20 +38,20 @@ public class Constituents extends javax.swing.JPanel {
         softwareIdentityInstance = new SoftwareIdentityInstance();
         initComponents();
         jPanel2.setVisible(false);
-        jComboBox1.addActionListener((ActionEvent ae) -> {
-            if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("pnpIds")) {
+        invMethodComboBox.addActionListener((ActionEvent ae) -> {
+            if (invMethodComboBox.getSelectedItem().toString().equalsIgnoreCase("pnpIds")) {
                 jPanel2.setVisible(true);
                 cl.show(jPanel2, "1");
-            } else if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("msis")) {
+            } else if (invMethodComboBox.getSelectedItem().toString().equalsIgnoreCase("msis")) {
                 jPanel2.setVisible(true);
                 cl.show(jPanel2, "2");
-            } else if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("registryKeys")) {
+            } else if (invMethodComboBox.getSelectedItem().toString().equalsIgnoreCase("registryKeys")) {
                 jPanel2.setVisible(true);
                 cl.show(jPanel2, "3");
-            } else if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("softwareIdentityInstances")) {
+            } else if (invMethodComboBox.getSelectedItem().toString().equalsIgnoreCase("softwareIdentityInstances")) {
                 jPanel2.setVisible(true);
                 cl.show(jPanel2, "4");
-            } else if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("<select one>")) {
+            } else if (invMethodComboBox.getSelectedItem().toString().equalsIgnoreCase("<select one>")) {
                 jPanel2.setVisible(false);
             }
         });
@@ -69,10 +69,10 @@ public class Constituents extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        smbiosVersionField = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        invMethodComboBox = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -86,13 +86,13 @@ public class Constituents extends javax.swing.JPanel {
         jLabel2.setText("SMBIOS Version");
         jLabel2.setVisible(false);
 
-        jTextField2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTextField2.setInputVerifier(new VerifyName());
-        jTextField2.setPreferredSize(new java.awt.Dimension(106, 22));
-        jTextField2.setVisible(false);
-        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+        smbiosVersionField.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        smbiosVersionField.setInputVerifier(new VerifyName());
+        smbiosVersionField.setPreferredSize(new java.awt.Dimension(106, 22));
+        smbiosVersionField.setVisible(false);
+        smbiosVersionField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField2FocusLost(evt);
+                smbiosVersionFieldFocusLost(evt);
             }
         });
 
@@ -102,10 +102,10 @@ public class Constituents extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel3.setText("Inventory Metadata Method");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<select one>" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        invMethodComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<select one>" }));
+        invMethodComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                invMethodComboBoxActionPerformed(evt);
             }
         });
 
@@ -136,8 +136,8 @@ public class Constituents extends javax.swing.JPanel {
                         .addGap(143, 143, 143)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(invMethodComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(smbiosVersionField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 240, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -156,11 +156,11 @@ public class Constituents extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(smbiosVersionField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(invMethodComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -178,9 +178,9 @@ public class Constituents extends javax.swing.JPanel {
         jPanel2.add(softwareIdentityInstance,"4");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void invMethodComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_invMethodComboBoxActionPerformed
         
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_invMethodComboBoxActionPerformed
 
     public Pnpids getPnpids() {
         return pnpids;
@@ -190,27 +190,27 @@ public class Constituents extends javax.swing.JPanel {
         jPanel2.setVisible(false);
         if(jLabel4.getText().equalsIgnoreCase("<select Component Type>")){
             jLabel2.setVisible(false);
-            jTextField2.setVisible(false);
+            smbiosVersionField.setVisible(false);
             jLabel3.setVisible(false);
-            jComboBox1.setVisible(false);
+            invMethodComboBox.setVisible(false);
         }else if(jLabel4.getText().equalsIgnoreCase("BIOS")){
             jLabel2.setVisible(true);
-            jTextField2.setVisible(true);
+            smbiosVersionField.setVisible(true);
             jLabel3.setVisible(false);
-            jComboBox1.setVisible(false);
+            invMethodComboBox.setVisible(false);
         }else{
             jLabel2.setVisible(false);
-            jTextField2.setVisible(false);
+            smbiosVersionField.setVisible(false);
             jLabel3.setVisible(true);
-            jComboBox1.setVisible(true);
-            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<select one>", "pnpIds", "msis", "registryKeys", "softwareIdentityInstances" }));
+            invMethodComboBox.setVisible(true);
+            invMethodComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<select one>", "pnpIds", "msis", "registryKeys", "softwareIdentityInstances" }));
         }
     }//GEN-LAST:event_jLabel4PropertyChange
 
-    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+    private void smbiosVersionFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_smbiosVersionFieldFocusLost
         // TODO add your handling code here:
-        jTextField2.setText(jTextField2.getText().trim());
-    }//GEN-LAST:event_jTextField2FocusLost
+        smbiosVersionField.setText(smbiosVersionField.getText().trim());
+    }//GEN-LAST:event_smbiosVersionFieldFocusLost
 
     public JLabel getjLabel4() {
         return jLabel4;
@@ -241,48 +241,48 @@ public class Constituents extends javax.swing.JPanel {
     }
 
     public JComboBox getjComboBox1() {
-        return jComboBox1;
+        return invMethodComboBox;
     }
 
     public void setjComboBox1(JComboBox jComboBox1) {
-        this.jComboBox1 = jComboBox1;
+        this.invMethodComboBox = jComboBox1;
     }
 
     public JTextField getjTextField2() {
-        return jTextField2;
+        return smbiosVersionField;
     }
     
        
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox invMethodComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField smbiosVersionField;
     // End of variables declaration//GEN-END:variables
 
     public void clearField() {
         jLabel4.setText("<select Component Type>");
-        jTextField2.setText("");
-        jComboBox1.setSelectedIndex(0);
+        smbiosVersionField.setText("");
+        invMethodComboBox.setSelectedIndex(0);
         msis.clearField();
         registrykeys.clearField();
         softwareIdentityInstance.clearField();
     }
 
     public boolean checkField(String errorNode) {
-        jTextField2.setBackground(Color.white);
-        if (errorNode.equalsIgnoreCase(jTextField2.getText())) {
-            jTextField2.setBackground(Color.yellow);
+        smbiosVersionField.setBackground(Color.white);
+        if (errorNode.equalsIgnoreCase(smbiosVersionField.getText())) {
+            smbiosVersionField.setBackground(Color.yellow);
             return true;
-        } else if ( jComboBox1.getSelectedItem().toString().equalsIgnoreCase("msis") && checkField(errorNode,msis.getjTable1())) {
+        } else if ( invMethodComboBox.getSelectedItem().toString().equalsIgnoreCase("msis") && checkField(errorNode,msis.getjTable1())) {
             return true;
-        }else if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("registrykeys") && checkField(errorNode,registrykeys.getjTable1())) {
+        }else if (invMethodComboBox.getSelectedItem().toString().equalsIgnoreCase("registrykeys") && checkField(errorNode,registrykeys.getjTable1())) {
             return true;
-        }else if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("softwareIdentityInstance") && checkField(errorNode,softwareIdentityInstance.getjTable1())) {
+        }else if (invMethodComboBox.getSelectedItem().toString().equalsIgnoreCase("softwareIdentityInstance") && checkField(errorNode,softwareIdentityInstance.getjTable1())) {
             return true;
         }
         return false;

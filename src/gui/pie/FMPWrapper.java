@@ -35,22 +35,22 @@ public class FMPWrapper extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        fmpWrapperIdField = new javax.swing.JTextField();
+        efiField = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        jComboBox3 = new javax.swing.JComboBox();
-        jComboBox4 = new javax.swing.JComboBox();
-        jTextField2 = new javax.swing.JTextField();
+        supInvenComboBox = new javax.swing.JComboBox();
+        supUpdateComboBox = new javax.swing.JComboBox();
+        supRollbkComboBox = new javax.swing.JComboBox();
+        fmpWrapperNameField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        digiSignComboBox = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        driverField = new javax.swing.JTextField();
+        srcInvenField = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 0), null, new java.awt.Color(0, 0, 0)));
@@ -67,7 +67,7 @@ public class FMPWrapper extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel4.setText("If wrapper supports inventory ");
 
-        jTextField1.setEditable(false);
+        fmpWrapperIdField.setEditable(false);
 
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel11.setText("Supported*");
@@ -84,19 +84,19 @@ public class FMPWrapper extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel7.setText("Rollback*");
 
-        jComboBox2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "false", "true" }));
+        supInvenComboBox.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        supInvenComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "false", "true" }));
 
-        jComboBox3.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "false", "true" }));
+        supUpdateComboBox.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        supUpdateComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "false", "true" }));
 
-        jComboBox4.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "false", "true" }));
+        supRollbkComboBox.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        supRollbkComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "false", "true" }));
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel8.setText("Digital Signature present");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "false", "true" }));
+        digiSignComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "false", "true" }));
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel9.setText("Driver to be loaded prior to calling the wrapper");
@@ -128,15 +128,15 @@ public class FMPWrapper extends javax.swing.JPanel {
                             .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5))
+                            .addComponent(digiSignComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(efiField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                            .addComponent(fmpWrapperIdField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(supInvenComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(supUpdateComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(supRollbkComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fmpWrapperNameField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(driverField)
+                            .addComponent(srcInvenField))
                         .addGap(81, 81, 81))))
         );
         layout.setVerticalGroup(
@@ -145,115 +145,116 @@ public class FMPWrapper extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fmpWrapperIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fmpWrapperNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(efiField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(digiSignComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(driverField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(supInvenComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(srcInvenField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(supUpdateComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(supRollbkComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(144, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     public JComboBox getjComboBox1() {
-        return jComboBox1;
+        return digiSignComboBox;
     }
 
     public JComboBox getjComboBox2() {
-        return jComboBox2;
+        return supInvenComboBox;
     }
 
     public JComboBox getjComboBox3() {
-        return jComboBox3;
+        return supUpdateComboBox;
     }
 
     public JComboBox getjComboBox4() {
-        return jComboBox4;
+        return supRollbkComboBox;
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return fmpWrapperIdField;
     }
 
     public JTextField getjTextField2() {
-        return jTextField2;
+        return fmpWrapperNameField;
     }
 
     public JTextField getjTextField3() {
-        return jTextField3;
+        return efiField;
     }
 
     public JTextField getjTextField4() {
-        return jTextField4;
+        return driverField;
     }
 
     public JTextField getjTextField5() {
-        return jTextField5;
+        return srcInvenField;
     }
 
     public void clearData(){
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
-        jTextField5.setText("");
-        jComboBox1.setSelectedIndex(0);
-        jComboBox2.setSelectedIndex(0);
-        jComboBox3.setSelectedIndex(0);
-        jComboBox4.setSelectedIndex(0);
+        fmpWrapperIdField.setText("");
+        fmpWrapperNameField.setText("");
+        efiField.setText("");
+        driverField.setText("");
+        srcInvenField.setText("");
+        digiSignComboBox.setSelectedIndex(0);
+        supInvenComboBox.setSelectedIndex(0);
+        supUpdateComboBox.setSelectedIndex(0);
+        supRollbkComboBox.setSelectedIndex(0);
     }    
     
     void load(PayloadInfo pItem) {
         if(!pItem.getFMPWrapperID().isEmpty()){
-        jTextField1.setText(pItem.getFMPWrapperID());
-        jTextField2.setText(pItem.getFmpWrapperName());
-        jTextField3.setText(pItem.getFileNameFmp());
-        jTextField4.setText(pItem.getDvrNameFmp());
-        jTextField5.setText(pItem.getInvSource());
-        jComboBox1.setSelectedIndex(pItem.getFmpDigiSign().equalsIgnoreCase("false")?0:1);
-        jComboBox2.setSelectedIndex(pItem.getInventorySupp().equalsIgnoreCase("false")?0:1);
-        jComboBox3.setSelectedIndex(pItem.getUpdateSupp().equalsIgnoreCase("false")?0:1);
-        jComboBox4.setSelectedIndex(pItem.getRollbackSupp().equalsIgnoreCase("false")?0:1);    
+        fmpWrapperIdField.setText(pItem.getFMPWrapperID());
+        fmpWrapperNameField.setText(pItem.getFmpWrapperName());
+        efiField.setText(pItem.getFileNameFmp());
+        driverField.setText(pItem.getDvrNameFmp());
+        srcInvenField.setText(pItem.getInvSource());
+        digiSignComboBox.setSelectedIndex(pItem.getFmpDigiSign().equalsIgnoreCase("false")?0:1);
+        supInvenComboBox.setSelectedIndex(pItem.getInventorySupp().equalsIgnoreCase("false")?0:1);
+        supUpdateComboBox.setSelectedIndex(pItem.getUpdateSupp().equalsIgnoreCase("false")?0:1);
+        supRollbkComboBox.setSelectedIndex(pItem.getRollbackSupp().equalsIgnoreCase("false")?0:1);    
         }
             
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
-    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JComboBox digiSignComboBox;
+    private javax.swing.JTextField driverField;
+    private javax.swing.JTextField efiField;
+    private javax.swing.JTextField fmpWrapperIdField;
+    private javax.swing.JTextField fmpWrapperNameField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -265,11 +266,10 @@ public class FMPWrapper extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField srcInvenField;
+    private javax.swing.JComboBox supInvenComboBox;
+    private javax.swing.JComboBox supRollbkComboBox;
+    private javax.swing.JComboBox supUpdateComboBox;
     // End of variables declaration//GEN-END:variables
 
 

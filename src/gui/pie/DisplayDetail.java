@@ -47,9 +47,9 @@ public class DisplayDetail extends javax.swing.JPanel {
         jTextField10 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        displayTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        missedFeatureTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -73,8 +73,8 @@ public class DisplayDetail extends javax.swing.JPanel {
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 13)); // NOI18N
         jLabel12.setText("User displayable text in a particular language");
 
-        jTable1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        displayTable.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        displayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -97,15 +97,15 @@ public class DisplayDetail extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        displayTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable1MouseReleased(evt);
+                displayTableMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(displayTable);
 
-        jTable2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        missedFeatureTable.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        missedFeatureTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -128,12 +128,12 @@ public class DisplayDetail extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+        missedFeatureTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable2MouseReleased(evt);
+                missedFeatureTableMouseReleased(evt);
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(missedFeatureTable);
         jScrollPane2.setVisible(false);
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
@@ -247,17 +247,17 @@ public class DisplayDetail extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) displayTable.getModel();
         if(tableModel.getRowCount()>0){
-            tableModel.removeRow(jTable1.getSelectedRow());
-            jTable1.setModel(tableModel);
+            tableModel.removeRow(displayTable.getSelectedRow());
+            displayTable.setModel(tableModel);
         }
         jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
+    private void displayTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_displayTableMouseReleased
         jButton1.setEnabled(true);
-    }//GEN-LAST:event_jTable1MouseReleased
+    }//GEN-LAST:event_displayTableMouseReleased
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        if (jTextField10.getText().isEmpty()) {
@@ -268,31 +268,32 @@ public class DisplayDetail extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jTable2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseReleased
+    private void missedFeatureTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_missedFeatureTableMouseReleased
         jButton3.setEnabled(true);
-    }//GEN-LAST:event_jTable2MouseReleased
+    }//GEN-LAST:event_missedFeatureTableMouseReleased
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable2.getModel();
+        tableModel = (DefaultTableModel) missedFeatureTable.getModel();
         if(tableModel.getRowCount()>0){
-            tableModel.removeRow(jTable2.getSelectedRow());
-            jTable2.setModel(tableModel);
+            tableModel.removeRow(missedFeatureTable.getSelectedRow());
+            missedFeatureTable.setModel(tableModel);
         }
         jButton3.setEnabled(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public JTable getjTable1() {
-        return jTable1;
+        return displayTable;
     }
 
     public JTable getjTable2() {
-        return jTable2;
+        return missedFeatureTable;
     }
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable displayTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -303,18 +304,17 @@ public class DisplayDetail extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
+    private javax.swing.JTable missedFeatureTable;
     // End of variables declaration//GEN-END:variables
 
     public void addRow(String text, String tableName) {
         DefaultTableModel tableModel = new DefaultTableModel();
         if (tableName.equalsIgnoreCase("display")) {
-            tableModel = (DefaultTableModel) jTable1.getModel();
+            tableModel = (DefaultTableModel) displayTable.getModel();
         } else if (tableName.equalsIgnoreCase("detail")) {
-            tableModel = (DefaultTableModel) jTable1.getModel();
+            tableModel = (DefaultTableModel) displayTable.getModel();
         }
         tableModel.addRow(new Object[]{text});
     }

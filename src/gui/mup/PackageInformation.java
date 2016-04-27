@@ -32,30 +32,30 @@ public class PackageInformation extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        nameField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        versionField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
+        specVersionComboBox1 = new javax.swing.JComboBox();
+        componentTypeComboBox = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 0, 0), null, new java.awt.Color(0, 0, 0)));
         setDoubleBuffered(false);
         setPreferredSize(new java.awt.Dimension(527, 473));
 
-        jTextField1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTextField1.setInputVerifier(new VerifyFields.VerifyName());
-        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        nameField.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        nameField.setInputVerifier(new VerifyFields.VerifyName());
+        nameField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField1FocusLost(evt);
+                nameFieldFocusLost(evt);
             }
         });
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nameFieldActionPerformed(evt);
             }
         });
 
@@ -65,8 +65,8 @@ public class PackageInformation extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel3.setText("Name");
 
-        jTextField2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTextField2.setInputVerifier(new VerifyVersion());
+        versionField.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        versionField.setInputVerifier(new VerifyVersion());
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel5.setText("Specification Version");
@@ -74,11 +74,11 @@ public class PackageInformation extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel1.setText("Update Component Type");
 
-        jComboBox1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2.4.3" }));
+        specVersionComboBox1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        specVersionComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2.4.3" }));
 
-        jComboBox2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<select Component Type>", "BIOS", "DRVR", "APP", "FRMW", "APAC", "UTIL", "BSD", "UEFICAPSULE" }));
+        componentTypeComboBox.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        componentTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "<select Component Type>", "BIOS", "DRVR", "APP", "FRMW", "APAC", "UTIL", "BSD", "UEFICAPSULE" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,10 +93,10 @@ public class PackageInformation extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addGap(137, 137, 137)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 160, Short.MAX_VALUE))
+                    .addComponent(nameField)
+                    .addComponent(versionField)
+                    .addComponent(specVersionComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(componentTypeComboBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, 160, Short.MAX_VALUE))
                 .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
@@ -105,77 +105,77 @@ public class PackageInformation extends javax.swing.JPanel {
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(versionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(specVersionComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(componentTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(264, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nameFieldActionPerformed
 
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+    private void nameFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFieldFocusLost
         // TODO add your handling code here:
-        jTextField1.setText(jTextField1.getText().trim());
-    }//GEN-LAST:event_jTextField1FocusLost
+        nameField.setText(nameField.getText().trim());
+    }//GEN-LAST:event_nameFieldFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox componentTypeComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JComboBox specVersionComboBox1;
+    private javax.swing.JTextField versionField;
     // End of variables declaration//GEN-END:variables
 
     public JComboBox getjComboBox1() {
-        return jComboBox1;
+        return specVersionComboBox1;
     }
 
     public JComboBox getjComboBox2() {
-        return jComboBox2;
+        return componentTypeComboBox;
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return nameField;
     }
 
     public JTextField getjTextField2() {
-        return jTextField2;
+        return versionField;
     }
 
     public void clearField() {
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jComboBox1.setSelectedIndex(0);
-        jComboBox2.setSelectedIndex(0);
-        jTextField1.setBackground(Color.white);
-        jTextField2.setBackground(Color.white);
+        nameField.setText("");
+        versionField.setText("");
+        specVersionComboBox1.setSelectedIndex(0);
+        componentTypeComboBox.setSelectedIndex(0);
+        nameField.setBackground(Color.white);
+        versionField.setBackground(Color.white);
     }
 
     public boolean checkField(String errorNode) {
-        jTextField1.setBackground(Color.white);
-        jTextField2.setBackground(Color.white);
-        if(errorNode.equalsIgnoreCase(jTextField1.getText())){
-            jTextField1.setBackground(Color.yellow);
+        nameField.setBackground(Color.white);
+        versionField.setBackground(Color.white);
+        if(errorNode.equalsIgnoreCase(nameField.getText())){
+            nameField.setBackground(Color.yellow);
             return true;
-        }else if(errorNode.equalsIgnoreCase(jTextField2.getText())){
-            jTextField2.setBackground(Color.yellow);
+        }else if(errorNode.equalsIgnoreCase(versionField.getText())){
+            versionField.setBackground(Color.yellow);
             return true;
         }
         return false;

@@ -38,12 +38,12 @@ public class InstallerBehaviour extends javax.swing.JPanel {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        behaviourTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
+        staticExtractionField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -62,8 +62,8 @@ public class InstallerBehaviour extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 15)); // NOI18N
         jLabel1.setText("heading");
 
-        jTable1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        behaviourTable.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        behaviourTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -79,12 +79,12 @@ public class InstallerBehaviour extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        behaviourTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jTable1MouseReleased(evt);
+                behaviourTableMouseReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(behaviourTable);
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jButton1.setText("add");
@@ -122,10 +122,10 @@ public class InstallerBehaviour extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setVisible(false);
-        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+        staticExtractionField.setVisible(false);
+        staticExtractionField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField1FocusLost(evt);
+                staticExtractionFieldFocusLost(evt);
             }
         });
 
@@ -148,7 +148,7 @@ public class InstallerBehaviour extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jRadioButton1)
                         .addGap(122, 122, 122)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(staticExtractionField, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
@@ -180,7 +180,7 @@ public class InstallerBehaviour extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(staticExtractionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton2)
                 .addGap(18, 18, 18)
@@ -216,17 +216,17 @@ public class InstallerBehaviour extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) behaviourTable.getModel();
         if(tableModel.getRowCount()>0){
-            tableModel.removeRow(jTable1.getSelectedRow());
-            jTable1.setModel(tableModel);
+            tableModel.removeRow(behaviourTable.getSelectedRow());
+            behaviourTable.setModel(tableModel);
         }
         jButton2.setEnabled(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        jTextField1.setVisible(true);
-        jTable1.setVisible(false);
+        staticExtractionField.setVisible(true);
+        behaviourTable.setVisible(false);
         jButton1.setEnabled(false);
         jButton2.setEnabled(false);
         jLabel2.setVisible(false);
@@ -239,9 +239,9 @@ public class InstallerBehaviour extends javax.swing.JPanel {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        jTextField1.setText("");
-        jTextField1.setVisible(false);
-        jTable1.setVisible(true);
+        staticExtractionField.setText("");
+        staticExtractionField.setVisible(false);
+        behaviourTable.setVisible(true);
         jButton1.setEnabled(true);
         jLabel2.setVisible(true);
         jLabel3.setVisible(true);
@@ -252,17 +252,18 @@ public class InstallerBehaviour extends javax.swing.JPanel {
         jCheckBox1.setVisible(true);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void jTable1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseReleased
+    private void behaviourTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_behaviourTableMouseReleased
         jButton2.setEnabled(true);
-    }//GEN-LAST:event_jTable1MouseReleased
+    }//GEN-LAST:event_behaviourTableMouseReleased
 
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+    private void staticExtractionFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_staticExtractionFieldFocusLost
         // TODO add your handling code here:
-        jTextField1.setText(jTextField1.getText().trim());
-    }//GEN-LAST:event_jTextField1FocusLost
+        staticExtractionField.setText(staticExtractionField.getText().trim());
+    }//GEN-LAST:event_staticExtractionFieldFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable behaviourTable;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -274,11 +275,10 @@ public class InstallerBehaviour extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField staticExtractionField;
     // End of variables declaration//GEN-END:variables
 
     public JRadioButton getjRadioButton1() {
@@ -290,11 +290,11 @@ public class InstallerBehaviour extends javax.swing.JPanel {
     }
 
     public JTable getjTable1() {
-        return jTable1;
+        return behaviourTable;
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return staticExtractionField;
     }
 
     public JLabel getjLabel1() {
@@ -308,8 +308,8 @@ public class InstallerBehaviour extends javax.swing.JPanel {
             jRadioButton1.setVisible(true);
             jRadioButton1.setSelected(true);
             jRadioButton2.setVisible(true);
-            jTextField1.setVisible(true);
-            jTable1.setVisible (false);
+            staticExtractionField.setVisible(true);
+            behaviourTable.setVisible (false);
             jButton1.setEnabled(false);
             jButton2.setEnabled(false);    
             jLabel2.setVisible(false);
@@ -323,41 +323,41 @@ public class InstallerBehaviour extends javax.swing.JPanel {
     }
 
     public void clearField() {
-        jTextField1.setBackground(Color.white);
-        jTextField1.setText("");
+        staticExtractionField.setBackground(Color.white);
+        staticExtractionField.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
         jTextField4.setText("");
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) behaviourTable.getModel();
         while(tableModel.getRowCount()>0){
             tableModel.removeRow(0);
         }
-        jTable1.setModel(tableModel);
+        behaviourTable.setModel(tableModel);
         jButton2.setEnabled(false);
         
     }
 
     public void addRow(Object[] newRow) {
         DefaultTableModel tableModel = new DefaultTableModel();
-        tableModel = (DefaultTableModel) jTable1.getModel();
+        tableModel = (DefaultTableModel) behaviourTable.getModel();
         tableModel.addRow(newRow);        
     }
 
     public boolean checkField(String errorNode) {
-        jTextField1.setBackground(Color.white);
-        if (jTextField1.getText().isEmpty()) {
-            int rowCount = jTable1.getRowCount();
-            int colCount = jTable1.getColumnCount();
+        staticExtractionField.setBackground(Color.white);
+        if (staticExtractionField.getText().isEmpty()) {
+            int rowCount = behaviourTable.getRowCount();
+            int colCount = behaviourTable.getColumnCount();
             for (int row = 0; row < rowCount; row++) {
                 for (int col = 0; col < colCount; col++) {
-                    if (errorNode.equalsIgnoreCase(jTable1.getValueAt(row, col).toString())) {
+                    if (errorNode.equalsIgnoreCase(behaviourTable.getValueAt(row, col).toString())) {
                         return true;
                     }
                 }
             }
-        }else if(errorNode.equalsIgnoreCase(jTextField1.getText())) {
-            jTextField1.setBackground(Color.yellow);
+        }else if(errorNode.equalsIgnoreCase(staticExtractionField.getText())) {
+            staticExtractionField.setBackground(Color.yellow);
             return true;
         }
 
