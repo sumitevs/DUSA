@@ -10,9 +10,9 @@ package gui.mup;
  * @author Sumit_Saseendran
  */
 public class ImageInventoryData {
-    protected String imageName;
-    protected String inventoryMethod;
-    protected Object[][] tableData;
+    private String imageName;
+    private String inventoryMethod;
+    private Object[][] tableData;
 
     public String getImageName() {
         return imageName;

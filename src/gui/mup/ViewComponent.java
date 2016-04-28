@@ -162,10 +162,11 @@ public class ViewComponent extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        int newAdd = 1;
         for (ImageInventoryData ivData : imageInventoryDataList) {
             System.out.println("image name in inventory: "+ivData.getImageName());
             System.out.println("image name in image data table: "+jTable2.getValueAt(jTable2.getSelectedRow(), 0).toString());
-            if (ivData.getImageName().contains(jTable2.getValueAt(jTable2.getSelectedRow(), 0).toString())) {
+            if (ivData.getImageName().contains(jTable2.getValueAt(jTable2.getSelectedRow(), 0).toString()) || ivData.getImageName().isEmpty()) {
                 //set header of table according to inventory method
                 //DefaultTableModel tableModel = null;
                 String[] colNames = null;
@@ -192,7 +193,15 @@ public class ViewComponent extends javax.swing.JPanel {
 //                    System.out.println(image.getTableData()[i][0].toString());
 //                    tableModel.addRow(image.getTableData()[i].clone());
 //                }
-                this.jTable1.setModel(new DefaultTableModel(ivData.getTableData(), colNames));
+                if(newAdd==1){
+                    this.jTable1.setModel(new DefaultTableModel(ivData.getTableData(), colNames));
+                    newAdd=0;
+                }else{
+                    DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel(); 
+                    for(Object[] row:ivData.getTableData()){
+                        model.addRow(row);
+                    }                    
+                }                
             }
         }
     }//GEN-LAST:event_jTable2MouseClicked

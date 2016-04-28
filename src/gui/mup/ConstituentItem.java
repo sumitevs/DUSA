@@ -55,7 +55,9 @@ public class ConstituentItem {
             imageDataItem.setFiles(item[3].toString());
             imageDataItem.setSupportedOS(item[4].toString());
             for(ImageInventoryData iiData : imageInventoryDataList){
-                imageDataItem.getImageInventoryDataList().add(iiData);            
+                if(iiData.getImageName().equalsIgnoreCase(item[0].toString()) || iiData.getImageName().isEmpty()){
+                    imageDataItem.getImageInventoryDataList().add(iiData);
+                }            
             }
             this.getImageList().add(imageDataItem);
         }

@@ -43,7 +43,7 @@ public class CreateMupXml {
         node.appendChild(getChildElements(doc, "packagegrouping", EnumPackageTypes.single_package.toString()));
         node.appendChild(getChildElements(doc, "packagingtype", EnumPackagingTypes.executable.toString()));
         node.appendChild(getChildElements(doc, "releasetype", mupDef.getReleasetype().toString()));
-        node.appendChild(getSupportedOS(doc, mupDef, "supportedoperatingsystems"));
+        node.appendChild(getSupportedOS(doc, mupDef.getApplicableOS(), "supportedoperatingsystems"));
         node.appendChild(getContent(doc, mupDef, "content"));
         return node;
     }
@@ -239,6 +239,7 @@ public class CreateMupXml {
                 for (String files : imItem.getFiles()) {
                     subSubNode.appendChild(getChildElements(doc, "file", files));
                 }
+                subSubNode.appendChild(getSupportedOS(doc, imItem.getOsList(), "supportedoperatingsystems"));
                 subNode.appendChild(subSubNode);
             }
             node.appendChild(subNode);
@@ -246,9 +247,9 @@ public class CreateMupXml {
         return node;
     }
 
-    private static Node getSupportedOS(Document doc, MupDef mupDef, String name) {
+    private static Node getSupportedOS(Document doc, List<OSIdentifier> listOS, String name) {
         Element node = doc.createElement(name);
-        for (OSIdentifier os : mupDef.getApplicableOS()) {
+        for (OSIdentifier os : listOS) {
             node.appendChild(getChildOsidentifier(doc, os, "osidentifier"));
         }
         return node;
