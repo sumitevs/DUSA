@@ -17,6 +17,7 @@ public class Constituent {
 
     private String constituentId;
     private List<ImageItem> imageItemList;
+    private static int count=0;
     
     public List<ImageItem> getImageItemList() {
         if (imageItemList == null) {
@@ -41,11 +42,17 @@ public class Constituent {
 //    }
 
     void addImage(ImageData iData) {
+        count++;
         if (this.imageItemList == null) {
                 this.imageItemList = new ArrayList<ImageItem>();
             }
         ImageItem imageItem=new ImageItem();
-        imageItem.setName(iData.getName());
+        if(iData.getName().isEmpty()){
+            imageItem.setName(iData.getName());
+        }else{
+            imageItem.setName(String.valueOf(count));
+        }
+        
         imageItem.setVersion(iData.getVersion());
         imageItem.setEnumDeviceType(EnumReleaseTypesProgrammatic.fromValue(iData.getType()));
         imageItem.setFiles(iData.getFiles());
